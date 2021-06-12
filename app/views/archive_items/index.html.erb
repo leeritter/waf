@@ -1,4 +1,8 @@
 <h1>Archive Items Index</h1>
+<p>
+  <%= link_to "Sign in", new_user_session_path %> | 
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+</p>
 
 <table>
   <% @archive_items.each do |archive_item| %>
