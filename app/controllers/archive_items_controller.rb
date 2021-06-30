@@ -1,4 +1,5 @@
 class ArchiveItemsController < ApplicationController
+  layout 'admin'
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :index]
 
   def index

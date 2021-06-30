@@ -34,5 +34,14 @@ module WafRails
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Use admin layout for devise views
+    config.to_prepare do
+      Devise::SessionsController.layout "admin"
+      Devise::RegistrationsController.layout "admin"
+      Devise::ConfirmationsController.layout "admin"
+      Devise::UnlocksController.layout "admin"
+      Devise::PasswordsController.layout "admin"
+    end
   end
 end
