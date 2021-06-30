@@ -1,0 +1,31 @@
+@import "variables";
+
+.notice, .alert {
+    width: 100%;
+    color: $purple-6;
+    padding: 20px 40px;
+
+}
+
+  .--is-admin {
+      background: $black-1;
+      color: $white-1;
+      padding: 120px 20px 20px 20px;
+
+  }
+
+  .admin-heading {
+      margin-bottom: 30px;
+  }
+
+  .admin-table {
+      padding: 10px;
+      margin-bottom: 20px;
+      border-collapse: collapse;
+      text-align: left;
+
+      td {
+          padding: 10px;
+          border-bottom: solid 1px #ccc;
+      }
+  }

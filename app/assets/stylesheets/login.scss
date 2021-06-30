@@ -1,0 +1,80 @@
+@import "variables";
+
+.login__wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__form {
+    .field {
+        margin-bottom: 10px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input[type="email"], input[type="password"] {
+        border: solid 1px transparent;
+        background: $black-4;
+        padding: 8px;
+        border-radius: 4px;
+        margin-top: 4px;
+        color: $white-1;
+        width: 100%;        
+
+        &:focus {
+            outline: none;
+            border: solid 1px $purple-1;
+        }
+    }    
+
+    input[type="checkbox"] {
+        &:focus {
+            outline: solid 1px $purple-1;
+        }
+    }
+
+    .actions {
+        margin-bottom: 20px;
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 33px;
+            border: solid 1px transparent;
+            background: $white-1;
+            color: $black-1;
+            cursor: pointer;
+
+            &:hover {
+                background: $white-2;
+            }
+
+            &:focus {
+                outline: none;
+                border: solid 1px $purple-1;
+            }
+        }
+    }
+}
+
+.login__heading {
+    border-bottom: solid 1px #ccc;
+    margin-bottom: 30px;
+    padding: 0 70px 20px 70px;
+}
+
+.login__links {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 30px;
+
+    a {
+        color: $black-5;
+    }
+}
