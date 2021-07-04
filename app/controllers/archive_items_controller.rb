@@ -8,6 +8,7 @@ class ArchiveItemsController < ApplicationController
 
   def new
     @archive_item = ArchiveItem.new
+    @submit_text = "Create Item"
   end  
 
   def create
@@ -21,13 +22,15 @@ class ArchiveItemsController < ApplicationController
 
   def edit
     @archive_item = ArchiveItem.find(params[:id])
+    @submit_text = "Update Item"
   end
 
   def update
     @archive_item = ArchiveItem.find(params[:id])
     @archive_item.update(archive_item_params)
+    flash.alert = "An item has been updated."
 
-    redirect_to archive_item_path(@archive_item)
+    redirect_to archive_items_path
   end
 
   def destroy

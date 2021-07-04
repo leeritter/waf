@@ -2,20 +2,22 @@
 
 .notice, .alert {
     width: 100%;
-    color: $purple-6;
-    padding: 20px 40px;
-
+    color: $purple-1;
+    padding: 20px 0px;
+    font-style: italic;
 }
 
 .--is-admin {
     background: $black-1;
     color: $white-1;
-    padding: 120px 20px 20px 20px;
+    padding: 120px 46px 20px 46px;
 
 }
 
 .admin-heading {
     margin-bottom: 30px;
+    color: $black-5;
+    font-size: 24px;
 }
 
 .admin-table {
@@ -25,8 +27,13 @@
     text-align: left;
 
     td {
-        padding: 10px;
-        border-bottom: solid 1px #ccc;
+        padding: 10px 15px;
+        border-bottom: solid 1px $black-4;
+    }
+
+    th {
+        padding: 10px 15px;
+        border-bottom: solid 1px $black-5;
     }
 }
 
@@ -66,7 +73,6 @@
         }
 
         &.form-controls {
-            align-items: center;
 
             * {
                 margin: 0;
@@ -107,7 +113,12 @@
         margin-top: 4px;
         color: $white-1;
         width: 100%;
-        max-width: 100%;   
+        max-width: 100%;
+        outline: none; 
+
+        &:focus, &:focus-visible {
+            border: solid 1px $purple-1;
+        }        
     }
 
     .form-select-wrapper {
@@ -132,24 +143,4 @@
             outline: solid 1px $purple-1;
         }
     }    
-
-    input[type="submit"] {
-        width: 100%;
-        max-width: 300px;
-        padding: 10px;
-        border-radius: 33px;
-        border: solid 1px transparent;
-        background: $white-1;
-        color: $black-1;
-        cursor: pointer;
-
-        &:hover {
-            background: $white-2;
-        }
-
-        &:focus {
-            outline: none;
-            border: solid 1px $purple-1;
-        }
-    }
 }
