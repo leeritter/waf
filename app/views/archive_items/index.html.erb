@@ -1,5 +1,15 @@
 <h1 class="admin-heading">Archive Items Index</h1>
 
+<% if notice || alert %>
+  <div class="err-messages">
+    <% if notice %>
+      <div class="notice"><%= notice %></div>
+    <% elsif alert %>
+      <div class="alert"><%= alert %></div>
+    <% end %>
+  </div>
+<% end %>
+
 <table class="admin-table">
   <thead>
     <tr>
@@ -17,9 +27,9 @@
       <td><%= archive_item.medium %></td>
       <td><%= archive_item.year %></td>
       <td><%= archive_item.location %></td>
-      <td><%= button_to 'Edit', edit_archive_item_path(archive_item), method: 'get'%></td>
-      <td><%= button_to 'Remove', archive_item_path(archive_item), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+      <td><%= button_to 'Edit', edit_archive_item_path(archive_item), method: 'get', class: "admin-table-button"%></td>
+      <td><%= button_to 'Remove', archive_item_path(archive_item), method: 'delete', data: { confirm: 'Are you sure?' }, class: "admin-table-button" %></td>
   <% end %>
   </tbody>
 </table>
-<%= link_to "Add Archive Item", new_archive_item_path %>
+<%= link_to "Add an item", new_archive_item_path, class: "button-round" %>

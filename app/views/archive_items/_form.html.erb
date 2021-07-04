@@ -1,0 +1,41 @@
+<%= form_with model: @archive_item, html: { class: "admin-form" } do |form| %>
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :title, "Title" %>
+      <%= form.text_field :title, autocomplete: "off", "data-lpignore": true %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :medium, "Medium" %>
+      <div class="form-select-wrapper" >
+        <%= form.select :medium, [["Photo", "photo"], ["Video", "video"], ["Audio", "audio"]] %>      
+      </div>
+    </div>
+    <div class="form-set">
+      <%= form.label :year, "Year" %>
+      <%= form.text_field :year, "data-lpignore": true %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :location, "Location" %>
+      <%= form.text_field :location, "data-lpignore": true %>
+    </div>
+    <div class="form-set">
+      <%= form.label :credit, "Credit" %>
+      <%= form.text_field :credit, "data-lpignore": true %>    
+    </div>
+  </div>
+  
+  <% if notice || alert %>
+    <div class="err-messages">
+      <div class="notice"><%= notice %></div>
+      <div class="alert"><%= alert %></div>
+    </div>
+  <% end %>
+  
+  <div class="form-set form-controls">
+    <%= form.submit @submit_text, class: "button-round" %>
+  </div>
+<% end %>

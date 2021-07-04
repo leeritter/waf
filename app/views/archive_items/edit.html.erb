@@ -1,9 +1,2 @@
-<h3>Update Archive Item</h3>
-<%= form_with model: @archive_item do |form| %>
-  <%= form.text_field :title, placeholder: "Title" %>
-  <%= form.text_field :medium, placeholder: "Medium" %>
-  <%= form.text_field :year, placeholder: "Year" %>
-  <%= form.text_field :location, placeholder: "Location" %>
-  <%= form.text_field :credit, placeholder: "Credit" %>
-  <%= form.submit %>
-<% end %>
+<h1 class="admin-heading">Update Archive Item</h1>
+<%= render "form" %>

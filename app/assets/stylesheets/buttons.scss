@@ -1,0 +1,37 @@
+.button-round, a.button-round {
+    align-self: flex-start;
+    padding: 10px 30px;
+    border-radius: 33px;
+    border: solid 1px transparent;
+    background: $white-1;
+    color: $black-1;
+    cursor: pointer;
+    display: inline-block;
+
+    &.sml {
+        // Small variant
+        padding: 5px 15px;
+        font-size: 12px;
+    }
+
+    &:hover {
+        background: $white-2;
+    }
+
+    &:focus {
+        outline: none;
+        border: solid 1px $purple-1;
+    }
+}
+
+.admin-table-button {
+    border: none;
+    outline: none;
+    background: none;
+    color: $purple-1;
+    cursor: pointer;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+}

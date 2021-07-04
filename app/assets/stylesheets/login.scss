@@ -2,7 +2,7 @@
 
 .login__wrapper {
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 140px); // Height minus nav offset
     display: flex;
     flex-flow: column;
     justify-content: center;
