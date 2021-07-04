@@ -13,7 +13,8 @@ class ArchiveItemsController < ApplicationController
 
   def create
     archive_item = ArchiveItem.create(archive_item_params)
-    redirect_to archive_items_path
+    flash.alert = "An item has been created."
+    redirect_to archive_items_path    
   end
 
   def show    
