@@ -12,12 +12,44 @@
     color: $white-1;
     padding: 120px 46px 20px 46px;
 
+    .global-nav {
+        &.--is-light {
+            background: $purple-1;
+        }
+    }
+
+}
+
+.admin-heading-wrapper {
+    display: flex;
+    justify-content: space-between;
 }
 
 .admin-heading {
     margin-bottom: 30px;
-    color: $black-5;
+    color: $white-1;
     font-size: 24px;
+    font-weight: normal;    
+}
+
+.admin-breadcrumbs {
+    color: $black-5;
+    font-size: 14px;
+    margin-bottom: 10px;
+
+    a, span {
+        text-decoration: underline;
+        margin: 0 8px;
+        position: relative;  
+        
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    span {
+        cursor: not-allowed;
+    }
 }
 
 .admin-table {
@@ -34,6 +66,27 @@
     th {
         padding: 10px 15px;
         border-bottom: solid 1px $black-5;
+    }
+}
+
+.admin-table-actions {
+    .button_to {
+        display: inline-block;
+
+        &:not(:last-of-type) {
+            margin-right: 10px;
+            position: relative;
+            
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: -10px;
+                width: 1px;
+                height: 100%;
+                background: $black-4;
+            }
+        }
     }
 }
 

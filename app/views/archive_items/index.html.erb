@@ -1,5 +1,3 @@
-<h1 class="admin-heading">Archive Items Index</h1>
-
 <% if notice || alert %>
   <div class="err-messages">
     <% if notice %>
@@ -10,6 +8,11 @@
   </div>
 <% end %>
 
+<div class="admin-heading-wrapper">
+  <h1 class="admin-heading">Archive Items</h1>
+  <%= link_to "Add an item", new_archive_item_path, class: "button-round" %>
+</div>
+
 <table class="admin-table">
   <thead>
     <tr>
@@ -17,7 +20,7 @@
         <th>Medium</th>
         <th>Year</th>
         <th>Location</th>
-        <th colspan="2"></th>
+        <th></th>
     </tr>
   </thead>
   <tbody>
@@ -27,9 +30,10 @@
       <td><%= archive_item.medium %></td>
       <td><%= archive_item.year %></td>
       <td><%= archive_item.location %></td>
-      <td><%= button_to 'Edit', edit_archive_item_path(archive_item), method: 'get', class: "admin-table-button"%></td>
-      <td><%= button_to 'Remove', archive_item_path(archive_item), method: 'delete', data: { confirm: 'Are you sure?' }, class: "admin-table-button" %></td>
+      <td class="admin-table-actions">
+        <%= button_to 'Edit', edit_archive_item_path(archive_item), method: 'get', class: "admin-table-button"%>
+        <%= button_to 'Remove', archive_item_path(archive_item), method: 'delete', data: { confirm: 'Are you sure?' }, class: "admin-table-button" %>
+      </td>
   <% end %>
   </tbody>
 </table>
-<%= link_to "Add an item", new_archive_item_path, class: "button-round" %>
