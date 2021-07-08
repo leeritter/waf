@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   get 'archive_items/destroy'
 
   root 'homepage#index'
-  get '/*path' => 'homepage#index'
+  #get '/*path' => 'homepage#index'
+
+  # Have to use this catch-all route to allow image attachments to work
+  get '*all', to: 'homepage#index', constraints: lambda { |req|
+    req.path.exclude? 'rails/active_storage'
+  }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

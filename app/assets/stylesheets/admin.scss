@@ -53,6 +53,7 @@
 }
 
 .admin-table {
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border-collapse: collapse;
@@ -70,6 +71,8 @@
 }
 
 .admin-table-actions {
+    text-align: right;
+
     .button_to {
         display: inline-block;
 
@@ -139,6 +142,7 @@
 
     label {
         font-size: 14px;
+        margin-bottom: 3px;
     }
 
     input[type="email"], input[type="password"], input[type="text"] {
@@ -196,4 +200,8 @@
             outline: solid 1px $purple-1;
         }
     }    
+}
+
+.admin-form-image {
+    max-width: 100%;
 }

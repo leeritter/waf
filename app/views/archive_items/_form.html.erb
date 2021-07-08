@@ -27,6 +27,18 @@
       <%= form.text_field :credit, "data-lpignore": true %>    
     </div>
   </div>
+  <div class="form-row">
+    <div class="form-set">        
+        <label>Preview</label>
+        <% if @archive_item.media.attached? %>
+            <%= image_tag @archive_item.media, class: "admin-form-image" %>
+        <% end %>
+    </div>
+    <div class="form-set">
+      <%= form.label :media, "Media File" %>
+      <%= form.file_field :media %>
+    </div>    
+  </div>
   
   <% if notice || alert %>
     <div class="err-messages">
