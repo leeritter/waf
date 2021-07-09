@@ -96,7 +96,7 @@
 .admin-form {
     display: flex;
     flex-flow: column;
-    margin-top: 40px;
+    margin: 40px 0;
     max-width: 800px;
 
     .form-row {
@@ -111,7 +111,7 @@
         flex-grow: 1;    
         flex-basis: 100%;    
 
-        * {
+        > * {
             margin-right: 15px;
             margin-left: 15px;            
         }
@@ -129,7 +129,6 @@
         }
 
         &.form-controls {
-
             * {
                 margin: 0;
             }
@@ -143,6 +142,12 @@
     label {
         font-size: 14px;
         margin-bottom: 3px;
+    }
+
+    input {
+        &:disabled {
+            opacity: 0.6;
+        }
     }
 
     input[type="email"], input[type="password"], input[type="text"] {
@@ -199,7 +204,25 @@
         &:focus {
             outline: solid 1px $purple-1;
         }
-    }    
+    }
+
+    ::-webkit-file-upload-button {
+        font-style: normal;
+        padding: 6px 20px;
+        margin-right: 10px;
+        border-radius: 33px;
+        border: solid 1px transparent;
+        background: $white-1;
+        color: $black-1;
+        cursor: pointer;
+        display: inline-block;        
+      }
+
+    input[type="file"] {
+        font-style: italic;
+        font-size: 14px;
+        margin-top: 5px;                   
+    }
 }
 
 .admin-form-image {
