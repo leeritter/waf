@@ -16,13 +16,18 @@
         font-size: 12px;
     }
 
-    &:hover {
+    &:not(:disabled):hover {
         background: $white-2;
     }
 
     &:focus {
         outline: none;
         border: solid 1px $purple-1;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
     }
 }
 
