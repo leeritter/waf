@@ -31,7 +31,7 @@
     <div class="form-set">        
         <label>Preview</label>
         <% if @archive_item.media.attached? %>
-            <%= image_tag @archive_item.media, class: "admin-form-image" %>
+            <%= image_tag @archive_item.media.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>
         <% end %>
     </div>
     <div class="form-set">
