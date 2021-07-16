@@ -28,6 +28,13 @@
     </div>
   </div>
   <div class="form-row">
+    <div class="form-set">
+      <%= form.label :tag_list, "Tags" %>
+      <%= form.text_field :tag_list, "data-lpignore": true, :value => @archive_item.tag_list.join(', ') %>
+    </div>    
+  </div>
+
+  <div class="form-row">
     <div class="form-set">        
         <label>Preview</label>                
         <% if @archive_item.media.attached? %>

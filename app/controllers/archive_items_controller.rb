@@ -44,6 +44,6 @@ class ArchiveItemsController < ApplicationController
   private
 
   def archive_item_params
-    params.require(:archive_item).permit(:title, :medium, :year, :credit, :location, :media)
+    params.require(:archive_item).permit(:title, :medium, :year, :credit, :location, :media, :tag_list)
   end
 end
