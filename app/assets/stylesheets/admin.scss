@@ -1,4 +1,5 @@
 @import "variables";
+$table-max-width: 1600px;
 
 .notice, .alert {
     width: 100%;
@@ -10,7 +11,7 @@
 .--is-admin {
     background: $black-1;
     color: $white-1;
-    padding: 120px 46px 20px 46px;
+    padding: 120px 46px 20px 46px;    
 
     .global-nav {
         &.--is-light {
@@ -23,6 +24,7 @@
 .admin-heading-wrapper {
     display: flex;
     justify-content: space-between;
+    max-width: $table-max-width;
 }
 
 .admin-heading {
@@ -54,6 +56,7 @@
 
 .admin-table {
     width: 100%;
+    max-width: $table-max-width;
     padding: 10px;
     margin-bottom: 20px;
     border-collapse: collapse;
@@ -227,4 +230,8 @@
 
 .admin-form-image {
     max-width: 100%;
+}
+
+.admin-form-filename {
+    color: $black-5;
 }
