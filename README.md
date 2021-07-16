@@ -20,10 +20,10 @@ To deploy any other branch run `git push heroku <yourbranch>:master`.
 Migrate production ready code from staging to prod using Heroku's "promote" UI.
 
 ### Third Party Tools
-***Acts as taggable on***
+***Acts as taggable on*** <br/>
 Using this gem for tagging functionality on the `ArchiveItem` model. <br/>
 [https://github.com/mbleigh/acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on)
 
-***Devise***
+***Devise*** <br/>
 Used for account management and authentication for the CMS. <br/>
 [https://github.com/heartcombo/devise](https://github.com/heartcombo/devise)
