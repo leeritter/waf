@@ -21,9 +21,9 @@ Migrate production ready code from staging to prod using Heroku's "promote" UI.
 
 ### Third Party Tools
 ***Acts as taggable on***
-Using this gem for tagging functionality on the `ArchiveItem` model.
+Using this gem for tagging functionality on the `ArchiveItem` model. <br/>
 [https://github.com/mbleigh/acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on)
 
 ***Devise***
-Used for account management and authentication for the CMS.
+Used for account management and authentication for the CMS. <br/>
 [https://github.com/heartcombo/devise](https://github.com/heartcombo/devise)
