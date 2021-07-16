@@ -14,5 +14,16 @@ To create a local database you can run `rails db:create`, and then seed it with 
 
 ### Deployment
 Staging and production environments are hosted on Heroku.
-To deploy you can run `git push heroku yourbranch:master` to push to staging.
+To deploy the main branch run: `git push heroku main` to push to staging.
+
+To deploy any other branch run `git push heroku <yourbranch>:master`.
 Migrate production ready code from staging to prod using Heroku's "promote" UI.
+
+### Third Party Tools
+***Acts as taggable on***
+Using this gem for tagging functionality on the `ArchiveItem` model.
+[https://github.com/mbleigh/acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on)
+
+***Devise***
+Used for account management and authentication for the CMS.
+[https://github.com/heartcombo/devise](https://github.com/heartcombo/devise)
