@@ -60,6 +60,8 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    acts-as-taggable-on (7.0.0)
+      activerecord (>= 5.0, < 6.2)
     aws-eventstream (1.1.1)
     aws-partitions (1.477.0)
     aws-sdk-core (3.117.0)
@@ -217,6 +219,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  acts-as-taggable-on (~> 7.0)
   aws-sdk-s3
   bootsnap (>= 1.4.4)
   byebug
