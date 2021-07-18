@@ -1,0 +1,42 @@
+@import "variables";
+
+.tag-ui-button-wrapper {
+    margin-top: 10px;
+}
+
+.tag-ui-button {
+    font-style: normal;
+    font-size: 12px;
+    padding: 6px 20px;
+    margin-right: 5px;
+    border-radius: 33px;
+    border: none;
+    cursor: pointer;
+    background: #adadad;
+    position: relative;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:after {
+        content: 'Remove';
+        font-size: 10px;
+        padding: 4px;
+        background: $purple-6;
+        color: $white-1;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, 0px);
+        transition: all 150ms ease-out;
+    }
+
+    &:hover {
+        &:after {
+            opacity: 1;
+            transform: translate(-50%, -14px);
+        }
+    }
+}
