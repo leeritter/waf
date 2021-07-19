@@ -42,6 +42,14 @@ function tagInput() {
             const optionButton = document.createElement('button');
             optionButton.className = 'tag-ui-option';
             optionButton.textContent = option;
+
+            // Listen for clicks
+            optionButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                addToTags(option, inputParent);
+            });
+
+            // Append to menu
             tagOptionsMenu.appendChild(optionButton);
         })
 
@@ -64,8 +72,67 @@ function renderTags(tags, wrapperEl) {
         const tagButton = document.createElement('button');
         tagButton.className = 'tag-ui-button';
         tagButton.textContent = tag;
+        tagButton.dataset.tagUiName = tag;
+
+        // Listen for clicks
+        tagButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            removeFromTags(tag, wrapperEl);
+        });
+
         wrapperEl.appendChild(tagButton);
     })
+}
+
+function addToTags(tag, parentEl) {
+    const inputEl = parentEl.querySelector('.js-tag-input');
+    let selectedValues = [];
+    if (inputEl.value) {
+        selectedValues = inputEl.value.split(', ');
+    }
+
+    // Check if tag already exists and add to input if not.
+    if (!selectedValues.includes(tag)) {
+        selectedValues.push(tag);
+        if (selectedValues.length > 1) {
+            inputEl.value = selectedValues.join(', ');
+        } else {
+            inputEl.value = selectedValues[0];
+        }
+
+        // Add button
+        const wrapperEl = parentEl.querySelector('.tag-ui-button-wrapper');
+        const tagButton = document.createElement('button');
+        tagButton.className = 'tag-ui-button';
+        tagButton.textContent = tag;
+        tagButton.dataset.tagUiName = tag;
+
+        // Listen for clicks
+        tagButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            removeFromTags(tag, wrapperEl);
+        });
+
+        wrapperEl.appendChild(tagButton);
+    }
+}
+
+function removeFromTags(tag, wrapperEl) {
+    const parentEl = wrapperEl.parentNode;
+    const inputEl = parentEl.querySelector('.js-tag-input');
+    const selectedValues = inputEl.value.split(', ');
+    const index = selectedValues.indexOf(tag);
+
+    if (index > -1) {
+        selectedValues.splice(index, 1);
+    }
+
+    inputEl.value = selectedValues.join(', ');
+
+    // Remove button
+    const buttonEl = wrapperEl.querySelector(`[data-tag-ui-name='${tag}']`);
+    buttonEl.remove();
+
 }
 
 export { tagInput };
