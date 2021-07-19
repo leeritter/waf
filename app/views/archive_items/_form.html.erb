@@ -32,7 +32,10 @@
       <%= form.label :tag_list, "Tags" %>
       <%= form.hidden_field :tag_list, :value => @archive_item.tag_list.join(', '), class: "js-tag-input", "data-tag-options": @tag_options.join(', ') %>
     </div>
-    <div class="form-set"></div>    
+    <div class="form-set">
+      <%= form.label :location_list, "Location" %>
+      <%= form.hidden_field :location_list, :value => @archive_item.location_list.join(', '), class: "js-tag-input", "data-tag-options": @location_options.join(', ') %>
+    </div>
   </div>
 
   <div class="form-row">

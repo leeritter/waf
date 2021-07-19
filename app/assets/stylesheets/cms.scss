@@ -126,7 +126,7 @@ $table-max-width: 1600px;
         }
 
         &:last-of-type {
-            * {
+            *:not(.tag-ui-button) {
                 margin-right: 0;
             }
         }

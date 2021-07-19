@@ -10,6 +10,7 @@ class ArchiveItemsController < ApplicationController
     @archive_item = ArchiveItem.new
     @submit_text = "Create Item"
     @tag_options = ArchiveTag.all.order(name: :desc).pluck(:name)
+    @location_options = Location.all.order(name: :desc).pluck(:name)
   end  
 
   def create
@@ -26,6 +27,7 @@ class ArchiveItemsController < ApplicationController
     @archive_item = ArchiveItem.find(params[:id])
     @submit_text = "Update Item"
     @tag_options = ArchiveTag.all.order(name: :desc).pluck(:name)
+    @location_options = Location.all.order(name: :desc).pluck(:name)
   end
 
   def update
@@ -46,6 +48,6 @@ class ArchiveItemsController < ApplicationController
   private
 
   def archive_item_params
-    params.require(:archive_item).permit(:title, :medium, :year, :credit, :location, :media, :tag_list)
+    params.require(:archive_item).permit(:title, :medium, :year, :credit, :location, :media, :tag_list, :location_list)
   end
 end
