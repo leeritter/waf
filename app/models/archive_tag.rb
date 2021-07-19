@@ -1,0 +1,2 @@
+class ArchiveTag < ApplicationRecord
+end

@@ -1,0 +1,95 @@
+@import "variables";
+
+.tag-ui-button-wrapper {
+    margin-top: 10px;
+}
+
+.tag-ui-button {
+    font-style: normal;
+    font-size: 12px;
+    padding: 6px 20px;
+    margin-right: 6px;
+    margin-bottom: 8px;
+    border-radius: 33px;
+    border: none;
+    cursor: pointer;
+    background: #adadad;
+    position: relative;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:after {
+        content: 'Remove';
+        font-size: 10px;
+        padding: 4px;
+        background: $purple-6;
+        color: $white-1;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, 0px);
+        transition: all 150ms ease-out;
+    }
+
+    &:hover {
+        background: #cdcdcd;
+
+        &:after {
+            opacity: 1;
+            transform: translate(-50%, -14px);
+        }
+    }
+}
+
+.tag-ui-text-input-wrapper {
+    position: relative;
+}
+
+.tag-ui-text-input {
+    width: 100%;
+}
+
+.tag-ui-options-menu {
+    width: 100%;
+    max-height: 250px;
+    overflow: auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    z-index: 100;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+    display: none;
+}
+
+.tag-ui-option {
+    width: 100%;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 15px 5px;
+    border-radius: 0;
+    border: none;
+    border-bottom: solid 1px $black-1;
+    background: $black-2;
+    color: $white-1;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover {
+        background: $purple-5;
+        color: $black-1;
+    }
+}
+
+.--is-focused {
+    .tag-ui-options-menu {
+        opacity: 1;
+    }
+}

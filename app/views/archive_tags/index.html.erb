@@ -1,0 +1,33 @@
+<% if notice || alert %>
+  <div class="err-messages">
+    <% if notice %>
+      <div class="notice"><%= notice %></div>
+    <% elsif alert %>
+      <div class="alert"><%= alert %></div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="admin-heading-wrapper">
+  <h1 class="admin-heading">Tags</h1>
+  <%= link_to "Add a tag", new_archive_tag_path, class: "button-round" %>
+</div>
+
+<table class="admin-table">
+  <thead>
+    <tr>
+        <th>Name</th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @archive_tags.each do |archive_tag| %>
+    <tr>
+      <td><%= archive_tag.name %></td>      
+      <td class="admin-table-actions">
+        <%= button_to 'Edit', edit_archive_tag_path(archive_tag), method: 'get', class: "admin-table-button"%>
+        <%= button_to 'Remove', archive_tag_path(archive_tag), method: 'delete', data: { confirm: 'Are you sure?' }, class: "admin-table-button" %>
+      </td>
+  <% end %>
+  </tbody>
+</table>
