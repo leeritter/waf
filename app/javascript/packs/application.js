@@ -7,7 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import DirectUploads from "./direct_uploads";
+import DirectUploads from "./direct_uploads"
+require("packs/admin")
 
 Rails.start()
 Turbolinks.start()
