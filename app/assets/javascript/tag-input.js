@@ -2,7 +2,10 @@ function tagInput() {
     const ALL_INPUTS = document.querySelectorAll('.js-tag-input');
 
     ALL_INPUTS.forEach((input) => {
-        const selectedValues = input.value.split(', ');
+        let selectedValues = [];
+        if (input.value) {
+            selectedValues = input.value.split(', ');
+        }
         const inputParent = input.parentNode;
 
         // Create searh wrapper
