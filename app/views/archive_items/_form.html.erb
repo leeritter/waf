@@ -9,7 +9,7 @@
     <div class="form-set">
       <%= form.label :medium, "Medium" %>
       <div class="form-select-wrapper" >
-        <%= form.select :medium, [["Photo", "photo"], ["Video", "video"], ["Audio", "audio"]] %>      
+        <%= form.select :medium, [["Photo", "photo"], ["Film", "film"], ["Audio", "audio"]] %>
       </div>
     </div>
     <div class="form-set">
@@ -30,7 +30,7 @@
   <div class="form-row">
     <div class="form-set">
       <%= form.label :tag_list, "Tags" %>
-      <%= form.hidden_field :tag_list, :value => @archive_item.tag_list.join(', '), class: "js-tag-input" %>
+      <%= form.hidden_field :tag_list, :value => @archive_item.tag_list.join(', '), class: "js-tag-input", "data-tag-options": @tag_options.join(', ') %>
     </div>
     <div class="form-set"></div>    
   </div>
