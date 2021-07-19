@@ -1,0 +1,33 @@
+<% if notice || alert %>
+  <div class="err-messages">
+    <% if notice %>
+      <div class="notice"><%= notice %></div>
+    <% elsif alert %>
+      <div class="alert"><%= alert %></div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="admin-heading-wrapper">
+  <h1 class="admin-heading">Locations</h1>
+  <%= link_to "Add a location", new_location_path, class: "button-round" %>
+</div>
+
+<table class="admin-table">
+  <thead>
+    <tr>
+        <th>Name</th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @locations.each do |location| %>
+    <tr>
+      <td><%= location.name %></td>      
+      <td class="admin-table-actions">
+        <%= button_to 'Edit', edit_location_path(location), method: 'get', class: "admin-table-button"%>
+        <%= button_to 'Remove', location_path(location), method: 'delete', data: { confirm: 'Are you sure?' }, class: "admin-table-button" %>
+      </td>
+  <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,56 @@
+<%= form_with model: location, html: { class: "admin-form" } do |form| %>
+  <% if location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+        <% location.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :name, "Name" %>
+      <%= form.text_field :name, autocomplete: "off", "data-lpignore": true %>
+    </div>
+    <div class="form-set"></div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :lat, "Latatude" %>
+      <%= form.text_field :lat, autocomplete: "off", "data-lpignore": true %>
+    </div>
+    <div class="form-set"></div>
+  </div>
+
+  <div class="form-row">    
+    <div class="form-set">
+      <%= form.label :lng, "Longitude" %>
+      <%= form.text_field :lng, autocomplete: "off", "data-lpignore": true %>
+    </div>
+    <div class="form-set"></div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :description, "Description" %>
+      <%= form.text_area :description, autocomplete: "off", "data-lpignore": true %>
+    </div>
+    <div class="form-set"></div>
+  </div>
+
+  <% if notice || alert %>
+    <div class="err-messages">
+      <div class="notice"><%= notice %></div>
+      <div class="alert"><%= alert %></div>
+    </div>
+  <% end %>
+  
+  <div class="form-set form-controls">
+    <%= form.submit @submit_text, class: "button-round" %>
+  </div>
+<% end %>

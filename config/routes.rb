@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   end
 
   resources :archive_items
+  resources :archive_tags
+  resources :locations
+  
   get 'archive_items/index'
   get 'archive_items/create'
   get 'archive_items/show'
