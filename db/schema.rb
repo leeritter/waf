@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_18_232008) do
+ActiveRecord::Schema.define(version: 2021_07_23_204539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2021_07_18_232008) do
     t.string "credit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "date_is_approx"
+    t.text "notes"
   end
 
   create_table "archive_tags", force: :cascade do |t|
@@ -64,6 +66,12 @@ ActiveRecord::Schema.define(version: 2021_07_18_232008) do
     t.string "lat"
     t.string "lng"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

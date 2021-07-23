@@ -5,6 +5,7 @@
       <%= form.text_field :title, autocomplete: "off", "data-lpignore": true %>
     </div>
   </div>
+
   <div class="form-row">
     <div class="form-set">
       <%= form.label :medium, "Medium" %>
@@ -13,42 +14,76 @@
       </div>
     </div>
     <div class="form-set">
-      <%= form.label :year, "Year" %>
-      <%= form.text_field :year, "data-lpignore": true %>
-    </div>
-  </div>
-  <div class="form-row">    
-    <div class="form-set">
       <%= form.label :credit, "Credit" %>
       <%= form.text_field :credit, "data-lpignore": true %>    
     </div>
+  </div>
+  
+  <div class="form-row">        
     <div class="form-set">
-      <%= form.label :location_list, "Location" %>
-      <%= form.hidden_field :location_list, :value => @archive_item.location_list.join(', '), class: "js-tag-input", "data-tag-options": @location_options.join(', ') %>
+      <%= form.label :year, "Year" %>
+      <%= form.text_field :year, "data-lpignore": true %>
+    </div>
+    <div class="form-set checkbox-wrapper">
+      <%= form.check_box :date_is_approx %> <span>- Is date approximate?</span>
     </div>
   </div>
-  <div class="form-row">
+
+  <div class="form-row">        
     <div class="form-set">
-      <%= form.label :tag_list, "Tags" %>
-      <%= form.hidden_field :tag_list, :value => @archive_item.tag_list.join(', '), class: "js-tag-input", "data-tag-options": @tag_options.join(', ') %>
-    </div>
-    <div class="form-set"></div>
+      <%= form.label :person_list, "People" %>
+      <%= form.hidden_field :person_list, :value => @archive_item.person_list.join(', '), class: "js-tag-input tag-input", "data-tag-options": @person_options.join(', ') %>
+    </div>    
   </div>
 
   <div class="form-row">
-    <div class="form-set">        
-        <label>Preview</label>                
-        <% if @archive_item.media.attached? %>
-            <% if @archive_item.medium == "photo" %>    
-                <%= image_tag @archive_item.media.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>            
-            <% else %>
-                <div class="admin-form-filename">File: <%= @archive_item.media.filename %></div>
-            <% end %>
-        <% end %>
+    <div class="form-set">
+      <%= form.label :location_list, "Location" %>
+      <%= form.hidden_field :location_list, :value => @archive_item.location_list.join(', '), class: "js-tag-input tag-input", "data-tag-options": @location_options.join(', ') %>
+    </div>    
+  </div>
+
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :tag_list, "Tags" %>
+      <%= form.hidden_field :tag_list, :value => @archive_item.tag_list.join(', '), class: "js-tag-input tag-input", "data-tag-options": @tag_options.join(', ') %>
     </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :notes, "Notes" %>
+      <%= form.text_area :notes %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <% if @archive_item.media.attached? %>
+      <div class="form-set">        
+        <label>Media Preview</label>                        
+          <% if @archive_item.medium == "photo" %>    
+              <%= image_tag @archive_item.media.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>            
+          <% else %>
+              <div class="admin-form-filename">File: <%= @archive_item.media.filename %></div>
+          <% end %>
+      </div>
+    <% end %>
     <div class="form-set">
       <%= form.label :media, "Media File" %>
       <%= form.file_field :media, direct_upload: true %>
+    </div>    
+  </div>
+
+  <div class="form-row">
+    <% if @archive_item.medium_photo.attached? %>
+      <div class="form-set">        
+        <label>Medium Photo Preview</label>                                    
+        <%= image_tag @archive_item.medium_photo.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>        
+      </div>
+    <% end %>
+    <div class="form-set">
+      <%= form.label :medium_photo, "Medium Photo" %>
+      <%= form.file_field :medium_photo, direct_upload: true %>
     </div>    
   </div>
   
