@@ -16,7 +16,7 @@
 <table class="admin-table">
   <thead>
     <tr>
-        <th>Title</th>
+        <th>Subject</th>
         <th>Medium</th>
         <th>Year</th>
         <th>Location</th>
@@ -29,7 +29,7 @@
       <td><%= archive_item.title %></td>
       <td><%= archive_item.medium %></td>
       <td><%= archive_item.year %></td>
-      <td><%= archive_item.location %></td>
+      <td><%= archive_item.location_list.join(', ') %></td>
       <td class="admin-table-actions">
         <%= button_to 'Edit', edit_archive_item_path(archive_item), method: 'get', class: "admin-table-button"%>
         <%= button_to 'Remove', archive_item_path(archive_item), method: 'delete', data: { confirm: 'Are you sure?' }, class: "admin-table-button" %>

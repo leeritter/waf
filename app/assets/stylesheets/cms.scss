@@ -74,7 +74,9 @@ $table-max-width: 1600px;
 }
 
 .admin-table-actions {
+    white-space: nowrap;
     text-align: right;
+    font-size: 13px;
 
     .button_to {
         display: inline-block;

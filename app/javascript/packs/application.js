@@ -9,6 +9,8 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import DirectUploads from "./direct_uploads"
 require("packs/admin")
+require("trix")
+require("@rails/actiontext")
 
 Rails.start()
 Turbolinks.start()

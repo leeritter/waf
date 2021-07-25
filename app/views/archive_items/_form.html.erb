@@ -1,7 +1,7 @@
 <%= form_with model: @archive_item, html: { class: "admin-form" } do |form| %>
   <div class="form-row">
     <div class="form-set">
-      <%= form.label :title, "Title" %>
+      <%= form.label :title, "Subject" %>
       <%= form.text_field :title, autocomplete: "off", "data-lpignore": true %>
     </div>
   </div>
@@ -53,7 +53,7 @@
   <div class="form-row">
     <div class="form-set">
       <%= form.label :notes, "Notes" %>
-      <%= form.text_area :notes %>
+      <%= form.rich_text_area :notes %>
     </div>
   </div>
 
