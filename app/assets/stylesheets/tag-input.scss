@@ -13,7 +13,7 @@
     border-radius: 33px;
     border: none;
     cursor: pointer;
-    background: #adadad;
+    background: $black-6;
     position: relative;
 
     &:last-child {
@@ -45,15 +45,15 @@
 }
 
 .tag-ui-text-input-wrapper {
-    position: relative;
+    position: relative;    
 }
 
 .tag-ui-text-input {
-    width: 100%;
+    width: calc(50% - 15px);
 }
 
 .tag-ui-options-menu {
-    width: 100%;
+    width: calc(50% - 15px);
     max-height: 250px;
     overflow: auto;
     position: absolute;

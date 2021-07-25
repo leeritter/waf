@@ -74,7 +74,9 @@ $table-max-width: 1600px;
 }
 
 .admin-table-actions {
+    white-space: nowrap;
     text-align: right;
+    font-size: 13px;
 
     .button_to {
         display: inline-block;
@@ -132,6 +134,10 @@ $table-max-width: 1600px;
         }
 
         &.form-controls {
+            border-top: solid 1px $black-4;
+            margin-top: 20px;
+            padding-top: 20px;
+            
             * {
                 margin: 0;
             }
@@ -203,7 +209,16 @@ $table-max-width: 1600px;
         }
     }
 
+    .checkbox-wrapper {
+        flex-direction: row;
+        align-items: center;
+        padding-top: 15px;        
+    }
+
     input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+
         &:focus {
             outline: solid 1px $purple-1;
         }
@@ -234,8 +249,4 @@ $table-max-width: 1600px;
 
 .admin-form-filename {
     color: $black-5;
-}
-
-.admin-tag-input {
-    background: red;
 }
