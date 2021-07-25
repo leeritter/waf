@@ -31,6 +31,8 @@ gem "aws-sdk-s3", require: false
 
 gem 'acts-as-taggable-on', '~> 7.0'
 
+gem 'pagy'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
