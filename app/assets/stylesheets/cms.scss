@@ -250,3 +250,43 @@ $table-max-width: 1600px;
 .admin-form-filename {
     color: $black-5;
 }
+
+body.--is-admin .pagy-nav {
+    margin-top: 30px;
+    font-size: 14px;
+
+    .page {
+        padding-right: 5px;
+        margin-right: 5px;        
+        border-right: solid 1px $black-4;
+        color: $black-6;
+
+        &:last-child {
+            border-right: none;
+        }
+
+    }
+
+    .page.prev, .page.next {
+        color: $black-6;
+    }    
+
+    .page.disabled {
+        color: $black-3;
+    }
+
+    .page.active {
+        color: $white-1;
+        position: relative;
+
+        &:after {
+            content: "";
+            width: calc(100% - 5px);
+            height: 2px;
+            position: absolute;
+            left: 0;
+            bottom: -2px;        
+            background: $purple-1;
+        }
+    }
+}

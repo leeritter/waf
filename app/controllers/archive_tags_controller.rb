@@ -4,8 +4,8 @@ class ArchiveTagsController < ApplicationController
   before_action :set_archive_tag, only: %i[ show edit update destroy ]
 
   # GET /archive_tags or /archive_tags.json
-  def index
-    @archive_tags = ArchiveTag.all.order(name: :desc)
+  def index    
+    @pagy, @archive_tags = pagy(ArchiveTag.all.order(name: :desc), page: params[:page], items: 25)
   end
 
   # GET /archive_tags/1 or /archive_tags/1.json

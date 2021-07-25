@@ -5,7 +5,7 @@ class LocationsController < ApplicationController
 
   # GET /locations or /locations.json
   def index
-    @locations = Location.all.order(name: :desc)
+    @pagy, @locations = pagy(Location.all.order(name: :desc), page: params[:page], items: 25)
   end
 
   # GET /locations/1 or /locations/1.json

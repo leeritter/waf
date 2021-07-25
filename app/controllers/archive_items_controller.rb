@@ -1,9 +1,9 @@
-class ArchiveItemsController < ApplicationController
+class ArchiveItemsController < ApplicationController  
   layout 'admin'
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :index]
 
   def index
-    @archive_items = ArchiveItem.all.order(created_at: :desc)
+    @pagy, @archive_items = pagy(ArchiveItem.all.order(created_at: :desc), page: params[:page], items: 25)
   end
 
   def new

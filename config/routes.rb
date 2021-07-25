@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'archive_items/edit'
   get 'archive_items/destroy'
 
+  get '/admin' => 'archive_items#index';
+
   root 'homepage#index'
   #get '/*path' => 'homepage#index'
 
