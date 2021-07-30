@@ -290,3 +290,35 @@ body.--is-admin .pagy-nav {
         }
     }
 }
+
+.sorted-up {
+    position: relative;
+
+    &:after {
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 7px solid $purple-1;
+        position: absolute;
+        bottom: 7px;
+        right: -15px;
+    }
+}
+
+.sorted-down {
+    position: relative;
+
+    &:after {
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;    
+        border-top: 7px solid $purple-1;
+        position: absolute;
+        bottom: 7px;
+        right: -15px;
+    }
+}

@@ -5,7 +5,7 @@ class ArchiveTagsController < ApplicationController
 
   # GET /archive_tags or /archive_tags.json
   def index    
-    @pagy, @archive_tags = pagy(ArchiveTag.all.order(name: :desc), page: params[:page], items: 25)
+    @pagy, @archive_tags = pagy(ArchiveTag.all.order(name: :asc), page: params[:page], items: 25)
   end
 
   # GET /archive_tags/1 or /archive_tags/1.json

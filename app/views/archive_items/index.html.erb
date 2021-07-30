@@ -16,9 +16,33 @@
 <table class="admin-table">
   <thead>
     <tr>
-        <th>Subject</th>
-        <th>Medium</th>
-        <th>Year</th>
+        <th>
+          <% if params[:sort] == 'subject' %>
+            <%= link_to 'Subject', archive_items_path(:sort => 'subject-desc'), class: 'sorted-down' %>
+          <% elsif params[:sort] == 'subject-desc' %>
+            <%= link_to 'Subject', archive_items_path(:sort => 'subject'), class: 'sorted-up' %>
+          <% else %>
+            <%= link_to 'Subject', archive_items_path(:sort => 'subject') %>
+          <% end %>
+        </th>
+        <th>
+          <% if params[:sort] == 'medium' %>
+            <%= link_to 'Medium', archive_items_path(:sort => 'medium-desc'), class: 'sorted-down' %>
+          <% elsif params[:sort] == 'medium-desc' %>
+            <%= link_to 'Medium', archive_items_path(:sort => 'medium'), class: 'sorted-up' %>
+          <% else %>
+            <%= link_to 'Medium', archive_items_path(:sort => 'medium') %>
+          <% end %>
+        </th>
+        <th>
+          <% if params[:sort] == 'year' %>
+            <%= link_to 'Year', archive_items_path(:sort => 'year-desc'), class: 'sorted-down' %>
+          <% elsif params[:sort] == 'year-desc' %>
+            <%= link_to 'Year', archive_items_path(:sort => 'year'), class: 'sorted-up' %>
+          <% else %>
+            <%= link_to 'Year', archive_items_path(:sort => 'year') %>
+          <% end %>
+        </th>
         <th>Location</th>
         <th></th>
     </tr>

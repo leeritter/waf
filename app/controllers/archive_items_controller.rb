@@ -1,9 +1,28 @@
 class ArchiveItemsController < ApplicationController  
   layout 'admin'
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :index]
+  PAGE_ITEMS = 25
+
+  def get_items(sort)
+    return pagy(ArchiveItem.all.order(sort), page: params[:page], items: PAGE_ITEMS)
+  end
 
   def index
-    @pagy, @archive_items = pagy(ArchiveItem.all.order(created_at: :desc), page: params[:page], items: 25)
+    if params[:sort] == 'subject'
+      @pagy, @archive_items = get_items(title: :asc)
+    elsif params[:sort] == 'subject-desc'
+      @pagy, @archive_items = get_items(title: :desc)
+    elsif params[:sort] == 'medium'
+      @pagy, @archive_items = get_items(medium: :asc)
+    elsif params[:sort] == 'medium-desc'
+      @pagy, @archive_items = get_items(medium: :desc)
+    elsif params[:sort] == 'year'
+      @pagy, @archive_items = get_items(year: :asc)
+    elsif params[:sort] == 'year-desc'
+      @pagy, @archive_items = get_items(year: :desc)      
+    else
+      @pagy, @archive_items = get_items(created_at: :desc)
+    end
   end
 
   def new
