@@ -5,7 +5,7 @@ class PeopleController < ApplicationController
 
   # GET /people or /people.json
   def index
-    @pagy, @people = pagy(Person.all.order(name: :desc), page: params[:page], items: 25)
+    @pagy, @people = pagy(Person.all.order(name: :asc), page: params[:page], items: 25)
   end
 
   # GET /people/1 or /people/1.json
