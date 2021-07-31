@@ -20,8 +20,10 @@ class ArchiveItemsController < ApplicationController
       @pagy, @archive_items = get_items(year: :asc)
     elsif params[:sort] == 'year-desc'
       @pagy, @archive_items = get_items(year: :desc)      
-    else
-      @pagy, @archive_items = get_items(created_at: :desc)
+    else              
+        @searched_items = ArchiveItem.ransack(title_cont: params[:q]).result        
+        @tagged_items = ArchiveItem.tagged_with([params[:q]], :any => true)
+        @archive_items = @searched_items + @tagged_items
     end
   end
 

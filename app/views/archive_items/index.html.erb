@@ -13,6 +13,12 @@
   <%= link_to "Add an item", new_archive_item_path, class: "button-round" %>
 </div>
 
+<%= form_with url: url_for(action: 'index', controller: 'archive_items'), method: :get do |form| %>
+  <%= form.label :q, "Search for:" %>
+  <%= form.text_field :q %>
+  <%= form.submit "Search" %>
+<% end %>
+
 <table class="admin-table">
   <thead>
     <tr>
@@ -61,4 +67,3 @@
   <% end %>
   </tbody>
 </table>
-<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
