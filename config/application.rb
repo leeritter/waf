@@ -21,7 +21,6 @@ Bundler.require(*Rails.groups)
 
 module WafRails
   class Application < Rails::Application
-    config.assets.initialize_on_precompile = false
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
