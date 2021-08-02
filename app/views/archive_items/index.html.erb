@@ -8,16 +8,15 @@
   </div>
 <% end %>
 
-<div class="admin-heading-wrapper">
+<div class="admin-heading-wrapper --has-search">
   <h1 class="admin-heading">Archive Items</h1>
-  <%= link_to "Add an item", new_archive_item_path, class: "button-round" %>
-</div>
+  <%= link_to "Add an item", new_archive_item_path, class: "button-round --secondary" %>
 
-<%= form_with url: url_for(action: 'index', controller: 'archive_items'), method: :get do |form| %>
-  <%= form.label :q, "Search for:" %>
-  <%= form.text_field :q %>
-  <%= form.submit "Search" %>
-<% end %>
+  <%= form_with url: url_for(action: 'index', controller: 'archive_items'), html: {class: "search__form"}, method: :get do |form| %>  
+    <%= form.text_field :archive_q, class: "search__field--round" %>
+    <%= form.submit "Search", class: "search__button--round" %>
+  <% end %>
+</div>
 
 <table class="admin-table">
   <thead>
@@ -67,3 +66,5 @@
   <% end %>
   </tbody>
 </table>
+
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>

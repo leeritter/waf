@@ -23,15 +23,18 @@ $table-max-width: 1600px;
 
 .admin-heading-wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: $table-max-width;
+    margin-bottom: 30px;
 }
 
 .admin-heading {
     margin-bottom: 30px;
     color: $white-1;
     font-size: 24px;
-    font-weight: normal;    
+    font-weight: normal;
+    width: 100%;    
 }
 
 .admin-breadcrumbs {
@@ -320,5 +323,16 @@ body.--is-admin .pagy-nav {
         position: absolute;
         bottom: 7px;
         right: -15px;
+    }
+}
+
+.--is-admin {
+    .global-nav__right {
+        display: flex;
+    }
+
+    .global-nav__links {
+        border-right: solid 1px $black-1;
+        padding-right: 30px;
     }
 }

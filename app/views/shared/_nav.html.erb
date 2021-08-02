@@ -1,10 +1,12 @@
 <nav class="global-nav --is-light">
     <a class="global-nav__home-link" href="">WORLD ARTS FOUNDATION INC.</a>
-    <ul class="global-nav__links">
-        <li><%= link_to "Archive Items", archive_items_path %></li>
-        <li><%= link_to "Tags", archive_tags_path %></li>
-        <li><%= link_to "Locations", locations_path %></li>
-        <li><%= link_to "People", people_path %></li>
-    </ul>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "global-nav__donate-link" %>
+    <div class="global-nav__right">
+        <ul class="global-nav__links">
+            <li><%= link_to "Archive Items", archive_items_path %></li>
+            <li><%= link_to "Tags", archive_tags_path %></li>
+            <li><%= link_to "Locations", locations_path %></li>
+            <li><%= link_to "People", people_path %></li>
+        </ul>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "global-nav__donate-link" %>
+    </div>
 </nav>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/archive_items/sync_search' => 'archive_items#sync_search_strings';
+
   resources :archive_items
   resources :archive_tags
   resources :locations
