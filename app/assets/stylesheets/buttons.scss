@@ -29,6 +29,17 @@
         opacity: 0.6;
         cursor: not-allowed;
     }
+
+    &.--secondary {
+        background: $purple-3;
+        color: $white-1;
+        font-size: 13px;
+        padding: 10px 16px;
+
+        &:hover {
+            background: $purple-4;
+        }
+    }
 }
 
 .admin-table-button {

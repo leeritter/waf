@@ -1,11 +1,7 @@
 class ArchiveItemsController < ApplicationController  
   layout 'admin'
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :index]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :index, :get_items, :sync_search_strings]
   PAGE_ITEMS = 25
-
-  def get_items(sort)
-    return pagy(ArchiveItem.all.order(sort), page: params[:page], items: PAGE_ITEMS)
-  end
 
   def index
     if params[:sort] == 'subject'
@@ -20,8 +16,22 @@ class ArchiveItemsController < ApplicationController
       @pagy, @archive_items = get_items(year: :asc)
     elsif params[:sort] == 'year-desc'
       @pagy, @archive_items = get_items(year: :desc)      
+    elsif params[:archive_q]
+      @pagy, @archive_items = pagy(ArchiveItem.ransack(title_or_search_tags_or_search_locations_or_search_people_cont: params[:archive_q]).result, page: params[:page], items: PAGE_ITEMS)
     else
       @pagy, @archive_items = get_items(created_at: :desc)
+    end
+  end
+
+  def get_items(sort)
+    return pagy(ArchiveItem.all.order(sort), page: params[:page], items: PAGE_ITEMS)
+  end
+
+  def sync_search_strings
+    @archive_items = ArchiveItem.all
+    @archive_items.each do |item|
+      # Sync locations
+      item.update_columns(search_locations: item.location_list.join(', '), search_tags: item.tag_list.join(', '), search_people: item.person_list.join(', '))      
     end
   end
 
@@ -35,6 +45,10 @@ class ArchiveItemsController < ApplicationController
 
   def create
     archive_item = ArchiveItem.create(archive_item_params)
+    
+    # Update search fields
+    archive_item.update_columns(search_locations: params[:archive_item][:location_list], search_tags: params[:archive_item][:tag_list], search_people: params[:archive_item][:person_list])
+
     flash.alert = "An item has been created."
     redirect_to archive_items_path
   end
@@ -51,11 +65,14 @@ class ArchiveItemsController < ApplicationController
     @person_options = Person.all.order(name: :desc).pluck(:name)
   end
 
-  def update
+  def update    
     @archive_item = ArchiveItem.find(params[:id])
     @archive_item.update(archive_item_params)
-    flash.alert = "An item has been updated."
 
+    # Update search fields
+    @archive_item.update_columns(search_locations: params[:archive_item][:location_list], search_tags: params[:archive_item][:tag_list], search_people: params[:archive_item][:person_list])
+
+    flash.alert = "An item has been updated."
     redirect_to archive_items_path
   end
 
@@ -69,6 +86,6 @@ class ArchiveItemsController < ApplicationController
   private
 
   def archive_item_params
-    params.require(:archive_item).permit(:title, :medium, :year, :credit, :location, :media, :tag_list, :location_list, :person_list, :date_is_approx, :notes, :medium_photo)
+    params.require(:archive_item).permit(:title, :medium, :year, :credit, :location, :media, :tag_list, :location_list, :person_list, :date_is_approx, :notes, :medium_photo, :search_tags ,:search_locations, :search_people)
   end
 end

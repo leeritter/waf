@@ -1,0 +1,29 @@
+.search__form {
+    display: flex;
+}
+
+.search__field--round {
+    padding: 8px 12px;
+    border-radius: 33px;
+    border: solid 1px transparent;
+    background: $white-1;
+    color: $black-1;
+    margin-right: 10px;
+    font-size: 13px;
+    width: 200px;
+}
+
+.search__button--round {
+    background: $purple-3;
+    color: $white-1;
+    border-radius: 33px;
+    border: none;
+    min-width: 40px;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 10px 20px;
+
+    &:hover {
+        background: $purple-4;
+    }
+}
