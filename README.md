@@ -27,3 +27,7 @@ Using this gem for tagging functionality on the `ArchiveItem` model. <br/>
 ***Devise*** <br/>
 Used for account management and authentication for the CMS. <br/>
 [https://github.com/heartcombo/devise](https://github.com/heartcombo/devise)
+
+***Ransack*** <br/>
+Used for search. <br/>
+[https://github.com/activerecord-hackery/ransack](https://github.com/activerecord-hackery/ransack)
