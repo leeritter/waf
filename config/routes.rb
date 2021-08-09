@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :collections
   resources :people
   devise_for :users
   namespace :api do

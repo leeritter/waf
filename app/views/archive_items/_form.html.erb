@@ -6,6 +6,22 @@
     </div>
   </div>
 
+  <% if action_name == "new" %>
+    <%= form.hidden_field :created_by, value: @current_user.email %>
+  <% else %>
+    <div class="form-row">
+      <div class="form-set">
+        <%= form.label :created_by, "Added by" %>
+        <%= form.text_field :created_by, disabled: true %>
+      </div>
+      <div class="form-set">
+        <%= form.label :created_at, "Date added" %>
+        <input disabled="disabled" type="text" value=<%= @archive_item.created_at.strftime("%-m/%-d/%Y") %> />
+      </div>
+    </div>
+  <% end %>
+
+
   <div class="form-row">
     <div class="form-set">
       <%= form.label :medium, "Medium" %>
@@ -43,6 +59,13 @@
     </div>    
   </div>
 
+  <div class="form-row">        
+    <div class="form-set">
+      <%= form.label :person_list, "Courtesy of" %>
+      <%= form.hidden_field :collection_list, :value => @archive_item.collection_list.join(', '), class: "js-tag-input tag-input", "data-tag-options": @collection_options.join(', ') %>
+    </div>    
+  </div>
+
   <div class="form-row">
     <div class="form-set">
       <%= form.label :tag_list, "Tags" %>
@@ -51,27 +74,27 @@
   </div>
 
   <div class="form-row">
-    <div class="form-set">
-      <%= form.label :notes, "Notes" %>
-      <%= form.rich_text_area :notes %>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <% if @archive_item.media.attached? %>
+    <% if @archive_item.content_file.attached? %>
       <div class="form-set">        
-        <label>Media Preview</label>                        
+        <label>Content Preview</label>                        
           <% if @archive_item.medium == "photo" %>    
-              <%= image_tag @archive_item.media.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>            
+              <%= image_tag @archive_item.content_file.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>            
           <% else %>
-              <div class="admin-form-filename">File: <%= @archive_item.media.filename %></div>
+              <div class="admin-form-filename">File: <%= @archive_item.content_file.filename %></div>
           <% end %>
       </div>
     <% end %>
     <div class="form-set">
-      <%= form.label :media, "Media File" %>
-      <%= form.file_field :media, direct_upload: true %>
+      <%= form.label :content_file, "Content File" %>
+      <%= form.file_field :content_file, direct_upload: true %>
     </div>    
+  </div>
+
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :content_notes, "Content notes" %>
+      <%= form.rich_text_area :content_notes %>
+    </div>
   </div>
 
   <div class="form-row">
@@ -85,6 +108,13 @@
       <%= form.label :medium_photo, "Medium Photo" %>
       <%= form.file_field :medium_photo, direct_upload: true %>
     </div>    
+  </div>
+
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :medium_notes, "Medium technical notes" %>
+      <%= form.rich_text_area :medium_notes %>
+    </div>
   </div>
   
   <% if notice || alert %>
