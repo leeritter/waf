@@ -13,7 +13,7 @@ $table-max-width: 1600px;
     color: $white-1;
     padding: 120px 46px 20px 46px;    
 
-    .global-nav {
+    .global-nav {        
         &.--is-light {
             background: $purple-1;
         }
@@ -333,6 +333,11 @@ body.--is-admin .pagy-nav {
 
     .global-nav__links {
         border-right: solid 1px $black-1;
-        padding-right: 30px;
+        padding-right: 10px;
+        font-size: 14px;
+
+        li {
+            margin-right: 20px;
+        }
     }
 }
