@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Banner from "./Banner";
+import Masonry from 'masonry-layout';
 
 const Archive = () => {
     const [archiveResults, setArchiveResults] = useState([]);
@@ -21,8 +22,17 @@ const Archive = () => {
             .catch(() => this.props.history.push("/"));
     }
 
+    function initMasonry() {
+        var msnry = new Masonry('.grid', {
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
+    }
+
     useEffect(() => {
         fetchResults();
+        initMasonry();
     }, []);
 
     return (
@@ -38,6 +48,21 @@ const Archive = () => {
                     </div>
                 ))}
             </section>
+
+            <div className="grid">
+                <div className="grid-item"><img src="https://www.placecage.com/c/200/300" /></div>
+                <div className="grid-item grid-item--width2"><img src="https://www.placecage.com/c/600/400" /></div>
+                <div className="grid-item"><img src="https://www.placecage.com/c/300/500" /></div>
+                <div className="grid-item"><img src="https://www.placecage.com/c/600/300" /></div>
+                <div className="grid-item grid-item--width2"><img src="https://www.placecage.com/c/400/400" /></div>
+                <div className="grid-item"><img src="https://www.placecage.com/c/600/500" /></div>
+                <div className="grid-item"><img src="https://www.placecage.com/c/200/300" /></div>
+                <div className="grid-item grid-item--width2"><img src="https://www.placecage.com/c/600/400" /></div>
+                <div className="grid-item"><img src="https://www.placecage.com/c/300/500" /></div>
+                <div className="grid-item"><img src="https://www.placecage.com/c/600/300" /></div>
+                <div className="grid-item grid-item--width2"><img src="https://www.placecage.com/c/400/400" /></div>
+                <div className="grid-item"><img src="https://www.placecage.com/c/600/500" /></div>
+            </div>
         </div>
     );
 }
