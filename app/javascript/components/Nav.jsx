@@ -23,7 +23,6 @@ const Nav = (props) => {
     }, [location]);
 
     useEffect(() => {
-        // console.log(linkRefs[3].current);
         linkRefs.forEach((link, index) => {
             const linkHref = link.current.getAttribute('href');
             if (linkHref === locationPath) {
@@ -33,22 +32,24 @@ const Nav = (props) => {
     }, [locationPath]);
 
     const cmptClasses = classNames({
-        'global-nav': true,
+        'global-nav-wrapper': true,
         '--is-light': props.themeLight,
         '--is-dark': !props.themeLight
     });
 
     return (
-        <nav className={cmptClasses}>
-            <Link className="global-nav__home-link" to="/">WORLD ARTS FOUNDATION INC.</Link>
-            <ul className="global-nav__links">
-                <li><Link className={activeLink == 0 ? '--is-active' : ''} ref={linkRefs[0]} to="/about">About</Link></li>
-                <li><Link className={activeLink == 1 ? '--is-active' : ''} ref={linkRefs[1]} to="/archive">Archive</Link></li>
-                <li><Link className={activeLink == 2 ? '--is-active' : ''} ref={linkRefs[2]} to="/our-work">Our Work</Link></li>
-                <li><Link className={activeLink == 3 ? '--is-active' : ''} ref={linkRefs[3]} to="/leadership">Leadership</Link></li>
-            </ul>
-            <Link className="global-nav__donate-link" to="/donate">DONATE</Link>
-        </nav>
+        <div className={cmptClasses}>
+            <nav className='global-nav'>
+                <Link className="global-nav__home-link" to="/">WORLD ARTS FOUNDATION INC.</Link>
+                <ul className="global-nav__links">
+                    <li><Link className={activeLink == 0 ? '--is-active' : ''} ref={linkRefs[0]} to="/about">About</Link></li>
+                    <li><Link className={activeLink == 1 ? '--is-active' : ''} ref={linkRefs[1]} to="/archive">Archive</Link></li>
+                    <li><Link className={activeLink == 2 ? '--is-active' : ''} ref={linkRefs[2]} to="/our-work">Our Work</Link></li>
+                    <li><Link className={activeLink == 3 ? '--is-active' : ''} ref={linkRefs[3]} to="/leadership">Leadership</Link></li>
+                </ul>
+                <Link className="global-nav__donate-link" to="/donate">DONATE</Link>
+            </nav>
+        </div>
     );
 }
 

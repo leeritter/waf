@@ -1,13 +1,13 @@
 @import "variables";
 
-.global-nav {
+.global-nav-wrapper {
     top: 0;
     left: 0;
     position: absolute;
     width: 100%;
-    padding: 37px 46px;
+    z-index: 100;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
     &.--is-light {
         color: $black-1;
@@ -26,6 +26,14 @@
             background: $white-1;
         }
     }
+}
+
+.global-nav {    
+    width: 100%;
+    max-width: 1200px;
+    padding: 37px 46px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .global-nav__home-link {

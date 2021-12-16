@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Banner from "./Banner";
+import BannerHome from "./BannerHome";
 import TextBlock from "./TextBlock";
 import Video from "./Video";
 import LinkList from "./LinkList";
 import Collage from "./Collage";
 import Footer from "./Footer";
+import Nav from "./Nav";
 import posterImage from '../../assets/images/vid-splash.png';
 
 const Home = () => {
@@ -31,7 +32,8 @@ const Home = () => {
 
     return (
         <div className="page-wrapper">
-            <Banner themeLight={true} alignLeft={true} headline="Homepage" />
+            <Nav />
+            <BannerHome themeLight={true} alignLeft={true} />
             <TextBlock themeLight={false} heading="What we do" leftText={leftText} />
             <Video themeLight={false} text={videoText} poster={posterImage} videoSrc="videos/kite.webm" />
             <LinkList heading="Our Work" links={workLinks} />
