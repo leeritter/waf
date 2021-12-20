@@ -1,0 +1,4 @@
+{
+  "ignoreFiles": ["**/*.js", "**/*.jsx"],
+  "extends": "stylelint-config-hudochenkov/order"
+}

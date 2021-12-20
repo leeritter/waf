@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import GestureUnderline from "./GestureUnderline";
 
 // Image assets
 import img_00 from '../../assets/images/about-00.jpg';
@@ -16,7 +17,7 @@ const Collage = (props) => {
                 <div className="global-container">
                     <div className="cmpt-collage__text">
                         <span className="cmpt-collage__text-title">About Us</span>
-                        <Link to="/about">Learn More</Link>
+                        <GestureUnderline text="Learn More" url="/about" isLight />
                     </div>
                     <div className="cmpt-collage__images">
                         <img className="cmpt-collage__img-00" src={img_00} />

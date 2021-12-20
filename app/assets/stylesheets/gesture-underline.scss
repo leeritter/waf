@@ -1,0 +1,34 @@
+a.cmpt-gesture-underline {
+  font-family: "Newsreader", serif;
+  font-size: 24px;
+  line-height: 1.3em;
+  color: #000;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  align-self: flex-start;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -24px;
+    transform: translateX(-50%);
+    height: 30px;
+    width: 190px;
+    background: url(asset-path("gesture-01.svg")) center bottom no-repeat;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.is-light {
+    color: #fff;
+
+    &:after {
+      background: url(asset-path("gesture-01-yellow.svg")) center bottom
+        no-repeat;
+    }
+  }
+}
