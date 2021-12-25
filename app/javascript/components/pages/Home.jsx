@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import BannerHome from "./BannerHome";
-import TextBlock from "./TextBlock";
-import Video from "./Video";
-import LinkList from "./LinkList";
-import Collage from "./Collage";
-import Footer from "./Footer";
-import Nav from "./Nav";
-import posterImage from '../../assets/images/vid-splash.png';
+import BannerHome from "../BannerHome";
+import TextBlock from "../TextBlock";
+import Video from "../Video";
+import LinkList from "../LinkList";
+import Collage from "../Collage";
+import Footer from "../Footer";
+import Nav from "../Nav";
+import posterImage from '../../../assets/images/vid-splash.png';
 
 const Home = () => {
     const leftText = "<p>Through community events and educational programming, we amplify regional contributions to arts and culture. Our media archive highlights the cultural heritage of Portland's historic Albina District.</p>";

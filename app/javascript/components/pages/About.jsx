@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Banner from "./Banner";
-import TextBlock from "./TextBlock";
+import Banner from "../Banner";
+import TextBlock from "../TextBlock";
 
 const About = () => {
 
@@ -10,8 +10,8 @@ const About = () => {
 
     return (
         <div className="page-wrapper">
-            <Banner themeLight={true} alignLeft={true} headline="About the foundation" />
-            <TextBlock themeLight={true} heading="Our Mission" leftText={leftText} rightText={rightText} />
+            <Banner themeLight={false} alignLeft={true} headline="About the foundation" className="--is-about" />
+            <TextBlock themeLight={true} heading="Our Mission" leftText={leftText} rightText={rightText} vPadding="lg" />
         </div >
     );
 }

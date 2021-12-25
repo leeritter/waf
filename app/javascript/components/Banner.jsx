@@ -3,22 +3,24 @@ import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import classNames from 'classnames';
 
-const Banner = (props) => {
-    const cmptClasses = classNames({
-        'cmpt-banner': true,
-        '--is-light': props.themeLight,
-        '--is-dark': !props.themeLight,
-        '--is-left': props.alignLeft,
-        '--is-right': !props.alignLeft
-    });
+const Banner = ({themeLight, alignLeft, headline, className}) => {
+
+    const cmptClasses = classNames(
+        'cmpt-banner',
+        themeLight && '--is-light',
+        !themeLight && '--is-dark',
+        alignLeft && '--is-left',
+        !alignLeft && '--is-right',
+        className
+    );
 
     return (
         <div className={cmptClasses}>
             <div className="cmpt-banner__wrapper">
-                <Nav themeLight={props.themeLight} />
+                <Nav themeLight={themeLight} />
                 <div className="cmpt-banner__content">
-                    {props.headline &&
-                        <h1 className="heading-xl">{props.headline}</h1>
+                    {headline &&
+                        <h1 className="heading-xl">{headline}</h1>
                     }
                 </div>
             </div>

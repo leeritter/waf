@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import Banner from "./Banner";
+import Banner from "../Banner";
 
 const Archive = () => {
     const [archiveResults, setArchiveResults] = useState([]);
