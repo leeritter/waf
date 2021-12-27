@@ -6,41 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 
-import galleryImage01 from '../../assets/images/about-gallery/01.jpg';
-import galleryImage02 from '../../assets/images/about-gallery/02.jpg';
-
-const Gallery = () => {
+const Gallery = ({slides}) => {
 
     const cmptClasses = classNames(
         'cmpt-gallery',        
     );
-
-    const slides = [
-        {
-            key: 1,
-            url: galleryImage01
-        },
-        {
-            key: 2,
-            url: galleryImage01
-        },
-        {
-            key: 3,
-            url: galleryImage01
-        },
-        {
-            key: 4,
-            url: galleryImage01
-        },
-        {
-            key: 5,
-            url: galleryImage01
-        },
-        {
-            key: 6,
-            url: galleryImage01
-        },
-    ]
 
     return (
         <div className={cmptClasses}>
@@ -52,16 +22,10 @@ const Gallery = () => {
                     freeMode={true}
                 >
                     {slides.map((slide) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={slide.key}>
                             <img src={slide.url} />
                         </SwiperSlide>
-                    ))}
-                    <SwiperSlide>
-                        <img src={galleryImage01} />
-                    </SwiperSlide>
-                    <SwiperSlide><img src={galleryImage02} /></SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
+                    ))}                    
                 </Swiper>
             </div>
         </div>
