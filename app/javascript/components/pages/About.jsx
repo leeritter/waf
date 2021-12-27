@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Banner from "../Banner";
 import TextBlock from "../TextBlock";
+import Gallery from '../Gallery';
 
 const About = () => {
 
@@ -12,6 +13,7 @@ const About = () => {
         <div className="page-wrapper">
             <Banner themeLight={false} alignLeft={true} headline="About the foundation" className="--is-about" />
             <TextBlock themeLight={true} heading="Our Mission" leftText={leftText} rightText={rightText} vPadding="lg" />
+            <Gallery />
         </div >
     );
 }

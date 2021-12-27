@@ -1,0 +1,39 @@
+@import "variables";
+
+.cmpt-gallery {
+  background: $black-7;
+}
+
+.cmpt-gallery__wrapper {
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container {
+  &:hover {
+    cursor: url(asset-path("cursor-drag.svg")) 45 45, grab;
+  }
+}
+
+.swiper-wrapper {
+  padding: 160px 0;
+  align-items: center;
+}
+
+.swiper-slide {
+  text-align: center;
+
+  &:hover {
+    cursor: url(asset-path("cursor-view.svg")) 45 45, grab;
+  }
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
