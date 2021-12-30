@@ -1,0 +1,30 @@
+@import "variables";
+
+.cmpt-donate-block {
+  margin: 160px 0;
+}
+
+.cmpt-donate-block__wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.cmpt-donate-block__text {
+  width: 66%; // 8 columns
+}
+
+.cmpt-donate-block__heading {
+  width: 100%;
+  font-size: 48px;
+  font-weight: 300;
+}
+
+.cmpt-donate-block__copy {
+  font-size: 18px;
+  line-height: 1.7em;
+  margin-top: 60px;
+}
+
+.cmpt-donate-block__link {
+  margin-left: 4.15%; // 0.5 column
+}

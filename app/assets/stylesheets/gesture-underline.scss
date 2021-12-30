@@ -30,6 +30,22 @@ a.cmpt-gesture-underline {
     &:after {
       background: url(asset-path("gesture-01-yellow.svg")) center bottom
         no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &.is-donate {
+    font-family: "Poppins", sans-serif;
+    font-size: 48px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $purple-3;
+
+    &:after {
+      width: 330px;
+      background: url(asset-path("gesture-01-purple.svg")) center bottom
+        no-repeat;
+      background-size: contain;
     }
   }
 

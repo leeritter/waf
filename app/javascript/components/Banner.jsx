@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import classNames from 'classnames';
 
-const Banner = ({themeLight, alignLeft, headline, className}) => {
+const Banner = ({themeLight, alignLeft, headline, className, hasDonateCta}) => {
 
     const cmptClasses = classNames(
         'cmpt-banner',
@@ -21,6 +21,9 @@ const Banner = ({themeLight, alignLeft, headline, className}) => {
                 <div className="cmpt-banner__content">
                     {headline &&
                         <h1 className="heading-xl">{headline}</h1>
+                    }
+                    {hasDonateCta && 
+                        <a href="" className="cmpt-banner__donate-cta">Donate Now</a>
                     }
                 </div>
             </div>

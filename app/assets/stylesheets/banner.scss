@@ -46,6 +46,20 @@
   max-width: $grid-width;
   padding: 90px 46px;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+a.cmpt-banner__donate-cta {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding: 16px 24px;
+  color: #fff;
+  font-size: 20px;
+  margin-top: 35px;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.45);
+  }
 }

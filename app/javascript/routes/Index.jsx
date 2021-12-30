@@ -6,6 +6,7 @@ import Archive from "../components/pages/Archive";
 import About from "../components/pages/About";
 import OurWork from "../components/pages/OurWork";
 import Leadership from "../components/pages/Leadership";
+import Donate from "../components/pages/Donate";
 
 export default (
     <Router>
@@ -16,6 +17,7 @@ export default (
             <Route path="/archive" exact component={Archive} />
             <Route path="/our-work" exact component={OurWork} />
             <Route path="/leadership" exact component={Leadership} />
+            <Route path="/donate" exact component={Donate} />
         </Switch>
     </Router>
 );
