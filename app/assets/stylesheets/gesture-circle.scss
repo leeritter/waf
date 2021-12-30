@@ -1,0 +1,32 @@
+a.cmpt-gesture-circle {
+  font-family: "Newsreader", serif;
+  font-size: 24px;
+  line-height: 1.3em;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  align-self: flex-start;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -14px;
+    transform: translateX(-50%);
+    height: 60px;
+    width: 244px;
+    background: url(asset-path("gesture-02-purple.svg")) center bottom no-repeat;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.is-light {
+    &:after {
+      background: url(asset-path("gesture-02-yellow.svg")) center bottom
+        no-repeat;
+    }
+  }
+}

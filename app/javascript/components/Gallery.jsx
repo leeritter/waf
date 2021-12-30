@@ -9,8 +9,10 @@ import Modal from 'react-modal';
 
 const Gallery = ({slides}) => {
     const [modalIsOpen, setIsOpen] = useState(false);
+    const [modalImage, setModalImage] = useState(null);
 
-    function openModal() {
+    function openModal(url) {
+        setModalImage(url);
         setIsOpen(true);
     }
     
@@ -35,7 +37,7 @@ const Gallery = ({slides}) => {
                 >
                     {slides.map((slide) => (
                         <SwiperSlide key={slide.key}>
-                            <button className="cmpt-gallery__button" onClick={openModal}>
+                            <button className="cmpt-gallery__button" onClick={() => {openModal(slide.url)}}>
                                 <img src={slide.url} />
                             </button>
                         </SwiperSlide>
@@ -50,9 +52,14 @@ const Gallery = ({slides}) => {
                 overlayClassName="overlay"
                 contentLabel="Gallery Modal"
             >
-                <h2>Modal</h2>
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>        
+                
+                <button className="modalClose" onClick={closeModal}></button>
+                <div className="modalContent">
+                    <figure className="modalFigure">
+                        <img className="modalImage" src={modalImage} />
+                        <caption className="modalCaption">Test caption</caption>
+                    </figure>
+                </div>
             </Modal>
         </div>
     );

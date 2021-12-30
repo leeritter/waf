@@ -4,7 +4,7 @@ import BannerHome from "../BannerHome";
 import TextBlock from "../TextBlock";
 import Video from "../Video";
 import LinkList from "../LinkList";
-import Collage from "../Collage";
+import CollageAbout from "../CollageAbout";
 import Footer from "../Footer";
 import Nav from "../Nav";
 import posterImage from '../../../assets/images/vid-splash.png';
@@ -37,7 +37,7 @@ const Home = () => {
             <TextBlock themeLight={false} heading="What we do" leftText={leftText} />
             <Video themeLight={false} text={videoText} poster={posterImage} videoSrc="videos/kite.webm" />
             <LinkList heading="Our Work" links={workLinks} />
-            <Collage />
+            <CollageAbout />
             <Footer />
         </div >
     );
