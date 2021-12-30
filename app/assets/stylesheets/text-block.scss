@@ -18,14 +18,6 @@
     .cmpt-text-block__heading {
       color: $black-3;
     }
-
-    .cmpt-text-block__left {
-      width: 41.66%; // 5 columns
-    }
-
-    .cmpt-text-block__right {
-      width: 50%; // 6 columns
-    }
   }
 
   &.--is-dark {
@@ -44,6 +36,13 @@
       width: 41.66%; // 5 columns
     }
   }
+
+  &.--is-single-col {
+    .cmpt-text-block__left {
+      width: 75%; // 9 columns
+      font-weight: 300;
+    }
+  }
 }
 
 .cmpt-text-block__text {
@@ -60,11 +59,13 @@
 }
 
 .cmpt-text-block__left {
+  width: 41.66%; // 5 columns
   font-size: 32px;
   line-height: 44px;
 }
 
 .cmpt-text-block__right {
+  width: 50%; // 6 columns
   font-size: 24px;
   line-height: 36px;
 }

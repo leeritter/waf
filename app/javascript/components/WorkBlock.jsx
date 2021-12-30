@@ -13,7 +13,9 @@ const WorkBlock = ({blockNumber, imageLeft, heading, text, link, image, sideText
     return (
         <div className={cmptClasses}>
             <div className="cmpt-work-block__side-text">{sideText}</div>
-            <img className="cmpt-work-block__image" src={image} />
+            <div className="cmpt-work-block__image-wrapper">
+                <img className="cmpt-work-block__image" src={image} />
+            </div>
             <div className="cmpt-work-block__content">
                 <div className="cmpt-work-block__number">&mdash; {blockNumber}</div>
                 {heading &&

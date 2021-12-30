@@ -1,0 +1,64 @@
+@import "variables";
+
+.cmpt-gallery-staff {
+  display: flex;
+  padding: 160px 0;
+
+  .swiper-wrapper {
+    padding: 0;
+    align-items: flex-start;
+  }
+}
+
+.cmpt-gallery-staff__wrapper {
+  overflow: hidden;
+}
+
+.cmpt-gallery-staff__heading {
+  width: 450px;
+  padding: 0;
+  padding-left: 120px;
+  padding-right: 40px;
+
+  .heading-m {
+    color: $black-3;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container {
+  &:hover {
+    cursor: url(asset-path("cursor-drag.svg")) 45 45, grab;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cmpt-gallery-staff__item-name {
+  margin-top: 28px;
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.cmpt-gallery-staff__item-role {
+  margin-top: 6px;
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-size: 16px;
+  text-align: left;
+}

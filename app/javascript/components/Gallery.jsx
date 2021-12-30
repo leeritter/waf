@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import classNames from 'classnames';
 import { Swiper, SwiperSlide } from "swiper/react";
 
