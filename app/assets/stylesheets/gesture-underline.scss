@@ -17,6 +17,7 @@ a.cmpt-gesture-underline {
     height: 30px;
     width: 190px;
     background: url(asset-path("gesture-01.svg")) center bottom no-repeat;
+    background-size: contain;
   }
 
   &:hover {
@@ -29,6 +30,16 @@ a.cmpt-gesture-underline {
     &:after {
       background: url(asset-path("gesture-01-yellow.svg")) center bottom
         no-repeat;
+    }
+  }
+
+  &.is-small {
+    font-size: 18px;
+    color: #5444ec;
+
+    &:after {
+      bottom: -30px;
+      width: 150px;
     }
   }
 }
