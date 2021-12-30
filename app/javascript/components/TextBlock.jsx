@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import classNames from 'classnames';
 
 const TextBlock = ({themeLight, leftText, rightText, heading, vPadding = "default" }) => {

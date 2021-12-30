@@ -45,7 +45,7 @@ const About = () => {
 
     return (
         <div className="page-wrapper">
-            <Banner themeLight={false} alignLeft={true} headline="About the foundation" className="--is-about" />
+            <Banner themeLight={false} alignLeft={true} headline="About the foundation" className="--has-graphic" />
             <TextBlock themeLight={true} heading="Our Mission" leftText={leftText} rightText={rightText} vPadding="lg" />
             <Gallery slides={slides} />
             <TextBlock themeLight={true} heading="Our History" leftText={leftTextHistory} rightText={rightTextHistory} vPadding="lg" />
