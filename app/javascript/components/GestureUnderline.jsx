@@ -10,8 +10,28 @@ const GestureUnderline = ({text, url, isLight, isSmall, isDonate}) => {
         'is-donate': isDonate    
     });    
 
-    return (    
-        <Link className={cmptClasses} to={url}>{text}</Link>
+    return (
+        <>
+        {isDonate && 
+            <a 
+                href="https://www.paypal.com/donate?token=4bQSWht7Is9Qj44IGCMedmeFp25xWSHsJEX6eps5m13PP6ZbbsFSkiEZbruLWek6YL53JDtO69Dp3Y--" 
+                className={cmptClasses}
+                target="_blank" 
+                rel="noopener noreferrer"
+            >
+                {text}
+            </a>
+        }
+
+        {!isDonate &&
+            <Link 
+                className={cmptClasses} 
+                to={url}
+            >
+                {text}
+            </Link>
+        }         
+        </>
     );
 }
 

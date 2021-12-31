@@ -21,7 +21,7 @@ const DonateBlock = () => {
                         </div>
                     </div>
                     <div className="cmpt-donate-block__link">
-                        <GestureUnderline text="Donate Now" url="http://google.com" isDonate />
+                        <GestureUnderline text="Donate Now" url="https://www.paypal.com/donate?token=4bQSWht7Is9Qj44IGCMedmeFp25xWSHsJEX6eps5m13PP6ZbbsFSkiEZbruLWek6YL53JDtO69Dp3Y--" isDonate />
                     </div>
                 </div>                
             </div>
