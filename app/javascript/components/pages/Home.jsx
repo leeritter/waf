@@ -7,7 +7,8 @@ import LinkList from "../LinkList";
 import CollageAbout from "../CollageAbout";
 import Footer from "../Footer";
 import Nav from "../Nav";
-import posterImage from '../../../assets/images/vid-splash.png';
+// import posterImage from '../../../assets/images/vid-splash.png';
+import posterImage from '../../../assets/images/video-poster.jpg';
 
 const Home = () => {
     const leftText = "<p>Through community events and educational programming, we amplify regional contributions to arts and culture. Our media archive highlights the cultural heritage of Portland's historic Albina District.</p>";
