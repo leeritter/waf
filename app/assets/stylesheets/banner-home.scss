@@ -32,8 +32,12 @@
 .cmpt-banner-home__content {
   width: 100%;
   max-width: $content-width;
-  padding: 0px 120px;
+  padding: 0px 40px;
   margin-top: 180px;
+
+  @media (min-width: $bp-md) {
+    padding: 0px 120px;
+  }
 
   .heading-xl {
     color: #fff;
@@ -57,16 +61,25 @@
   h2 {
     width: 390px;
     font-weight: 400;
-    font-size: 64px;
+    font-size: 34px;
     line-height: 1.2em;
+
+    @media (min-width: $bp-md) {
+      font-size: 64px;
+    }
   }
 }
 
 .banner-home-subhead {
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.3em;
   color: #fff;
   width: 488px;
+  max-width: 100%;
   margin-top: 117px;
+
+  @media (min-width: $bp-md) {
+    font-size: 32px;
+  }
 }

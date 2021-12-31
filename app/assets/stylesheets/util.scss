@@ -1,14 +1,18 @@
 @import "variables";
 
 .page-wrapper {
-    &.--is-dark {
-        background: $black-1;
-        color: $white-1;
-    }
+  &.--is-dark {
+    background: $black-1;
+    color: $white-1;
+  }
 }
 
 .global-container {
-    width: 100%;
-    max-width: $content-width;
+  width: 100%;
+  max-width: $content-width;
+  padding: 0 40px;
+
+  @media (min-width: $bp-md) {
     padding: 0 120px;
+  }
 }
