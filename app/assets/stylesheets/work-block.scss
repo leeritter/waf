@@ -4,8 +4,15 @@
   width: 100%;
   position: relative;
   display: flex;
-  margin-top: 140px;
-  margin-bottom: 140px;
+  flex-direction: column;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  @media (min-width: $bp-md) {
+    flex-direction: row;
+    margin-top: 140px;
+    margin-bottom: 140px;
+  }
 
   &.--image-left {
     justify-content: flex-start;
@@ -15,7 +22,9 @@
     }
 
     .cmpt-work-block__content {
-      margin-left: 120px;
+      @media (min-width: $bp-md) {
+        margin-left: 120px;
+      }
     }
   }
 
@@ -27,26 +36,39 @@
     }
 
     .cmpt-work-block__image-wrapper {
-      order: 2;
+      @media (min-width: $bp-md) {
+        order: 2;
+      }
     }
 
     .cmpt-work-block__content {
-      margin-right: 120px;
+      @media (min-width: $bp-md) {
+        margin-right: 120px;
+      }
     }
   }
 }
 
 .cmpt-work-block__side-text {
-  position: absolute;
-  top: 50%;
-  transform: rotate(-90deg);
-  color: #656e7b;
-  font-size: 18px;
-  font-family: "Newsreader", serif;
+  display: none;
+
+  @media (min-width: $bp-md) {
+    display: block;
+    color: #656e7b;
+    font-size: 18px;
+    font-family: "Newsreader", serif;
+    position: absolute;
+    transform: rotate(-90deg);
+    top: 50%;
+  }
 }
 
 .cmpt-work-block__image-wrapper {
-  width: 45%;
+  width: 100%;
+
+  @media (min-width: $bp-md) {
+    width: 45%;
+  }
 }
 
 .cmpt-work-block__image {
@@ -54,27 +76,48 @@
 }
 
 .cmpt-work-block__content {
-  width: 45%;
-  max-width: 386px;
+  width: 100%;
+
+  @media (min-width: $bp-md) {
+    width: 45%;
+    max-width: 386px;
+  }
+
+  .cmpt-gesture-underline {
+    margin-bottom: 40px;
+  }
 }
 
 .cmpt-work-block__number {
   color: #656e7b;
   font-size: 18px;
   font-family: "Newsreader", serif;
-  margin-bottom: 24px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+
+  @media (min-width: $bp-md) {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
 }
 
 .cmpt-work-block__heading {
   font-size: 36px;
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+
+  @media (min-width: $bp-md) {
+    margin-bottom: 60px;
+  }
 }
 
 .cmpt-work-block__text {
   font-size: 18px;
   line-height: 1.6em;
   color: #656e7b;
-  margin-bottom: 60px;
+
+  @media (min-width: $bp-md) {
+    margin-bottom: 60px;
+  }
 }

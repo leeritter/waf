@@ -2,21 +2,34 @@
 
 .cmpt-sponsors {
   background: #fafafd;
-  padding: 200px 0;
+  padding: 80px 0;
+
+  @media (min-width: $bp-md) {
+    padding: 200px 0;
+  }
 }
 
 .cmpt-sponsors__headline {
   font-family: "Poppins", sans-serif;
-  font-size: 48px;
+  font-size: 28px;
   font-weight: 300;
   text-transform: uppercase;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
   text-align: center;
+
+  @media (min-width: $bp-md) {
+    font-size: 48px;
+    margin-bottom: 80px;
+  }
 }
 
 .cmpt-sponsors__grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .cmpt-sponsors__logo {

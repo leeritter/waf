@@ -1,6 +1,6 @@
 a.cmpt-gesture-circle {
   font-family: "Newsreader", serif;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.3em;
   color: #fff;
   display: inline-block;
@@ -8,15 +8,25 @@ a.cmpt-gesture-circle {
   position: relative;
   align-self: flex-start;
 
+  @media (min-width: $bp-md) {
+    font-size: 24px;
+  }
+
   &:after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -14px;
     transform: translateX(-50%);
     height: 60px;
-    width: 244px;
+    bottom: -9px;
+    width: 170px;
     background: url(asset-path("gesture-02-purple.svg")) center bottom no-repeat;
+    background-size: contain;
+
+    @media (min-width: $bp-md) {
+      bottom: -14px;
+      width: 244px;
+    }
   }
 
   &:hover {
@@ -27,6 +37,7 @@ a.cmpt-gesture-circle {
     &:after {
       background: url(asset-path("gesture-02-yellow.svg")) center bottom
         no-repeat;
+      background-size: contain;
     }
   }
 }

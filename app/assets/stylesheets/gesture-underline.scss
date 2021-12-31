@@ -46,16 +46,26 @@ a.cmpt-gesture-underline {
 
   &.is-donate {
     font-family: "Poppins", sans-serif;
-    font-size: 48px;
+    font-size: 28px;
     font-weight: 300;
     text-transform: uppercase;
     color: $purple-3;
+    margin-top: 20px;
+
+    @media (min-width: $bp-md) {
+      margin-top: 0;
+      font-size: 48px;
+    }
 
     &:after {
-      width: 330px;
+      width: 170px;
       background: url(asset-path("gesture-01-purple.svg")) center bottom
         no-repeat;
       background-size: contain;
+
+      @media (min-width: $bp-md) {
+        width: 330px;
+      }
     }
   }
 

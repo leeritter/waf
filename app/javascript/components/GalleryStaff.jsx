@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from 'classnames';
 import { Mousewheel } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,9 +8,18 @@ import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 
 const GalleryStaff = ({slides}) => {    
+    const [isMobile, setIsMobile] = useState(false);
+
     const cmptClasses = classNames(
         'cmpt-gallery-staff',        
     );
+
+    useEffect(() => {
+        const windowWidth = window.innerWidth;
+        if (windowWidth < 768) {
+            setIsMobile(true);
+        }
+    }, []);
 
     return (
         <div className={cmptClasses}>
@@ -20,9 +29,9 @@ const GalleryStaff = ({slides}) => {
             <div className="cmpt-gallery-staff__wrapper">
                 <Swiper
                     modules={[Mousewheel]}
-                    spaceBetween={50}
-                    slidesPerView={4}
-                    slidesOffsetBefore={80}
+                    spaceBetween={isMobile ? 30 : 50}
+                    slidesPerView={isMobile ? 2 : 4}
+                    slidesOffsetBefore={isMobile ? 40 : 80}
                     freeMode={true}
                     mousewheel={true}
                 >

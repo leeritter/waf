@@ -35,7 +35,8 @@ const Home = () => {
             <Nav />
             <BannerHome themeLight={true} alignLeft={true} />
             <TextBlock themeLight={false} heading="What we do" leftText={leftText} />
-            <Video themeLight={false} text={videoText} poster={posterImage} videoSrc="videos/kite.webm" />
+            {/* <Video themeLight={false} text={videoText} poster={posterImage} videoSrc="videos/dream.mp4" /> */}
+            <Video themeLight={false} text={videoText} poster={posterImage} />
             <LinkList heading="Our Work" links={workLinks} />
             <CollageAbout />
             <Footer />

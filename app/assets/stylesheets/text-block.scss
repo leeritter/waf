@@ -56,20 +56,28 @@
 }
 
 .cmpt-text-block__left {
-  width: 41.66%; // 5 columns
+  width: 100%;
   font-size: 22px;
   line-height: 1.45em;
+  margin-bottom: 20px;
 
   @media (min-width: $bp-md) {
+    margin-bottom: 0;
+    width: 41.66%; // 5 columns
     font-size: 32px;
     line-height: 1.3em;
   }
 }
 
 .cmpt-text-block__right {
-  width: 50%; // 6 columns
-  font-size: 24px;
-  line-height: 36px;
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.5em;
+
+  @media (min-width: $bp-md) {
+    font-size: 24px;
+    width: 50%; // 6 columns
+  }
 }
 
 .--no-right-col {

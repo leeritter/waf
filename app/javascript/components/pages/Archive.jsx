@@ -1,43 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import React from 'react';
 import Banner from "../Banner";
+import TextBlock from "../TextBlock";
+import Footer from "../Footer";
 
 const Archive = () => {
-    const [archiveResults, setArchiveResults] = useState([]);
-
-    function fetchResults() {
-        const url = "/api/v1/archive_items/index";
-        fetch(url)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error("Network response was not ok.");
-            })
-            .then(response => {
-                console.log(response);
-                setArchiveResults(response);
-            })
-            .catch(() => this.props.history.push("/"));
-    }
-
-    useEffect(() => {
-        fetchResults();
-    }, []);
-
+    const leftText = "<p>World Arts Foundation Inc will soon have a vast library of historic preserved media available to browse, here in the archive. Check back in the coming months to explore the full collection.</p>";
     return (
         <div className="page-wrapper --is-dark">
             <Banner themeLight={true} alignLeft={true} headline="The archive" />
-            <section>
-                <h1>Archive Items</h1>
-                <p>Count: {archiveResults.length}</p>
-
-                {archiveResults.map((item, index) => (
-                    <div key={index}>
-                        Item: {item.title}
-                    </div>
-                ))}
-            </section>
+            <TextBlock themeLight={false} heading="Archive Coming Soon..." leftText={leftText} vPadding="lg" />
+            <Footer />
         </div>
     );
 }

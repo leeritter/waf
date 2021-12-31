@@ -35,8 +35,10 @@ const Video = (props) => {
                             ref={vidRef}
                         >
 
-                            <source src={props.videoSrc}
-                                type="video/webm" />
+                            {/* commented out because webpack cant process mp4 files */}
+                            {/* <source src={props.videoSrc} type="video/mp4" /> */}
+                            <source src="https://video.wixstatic.com/video/d4b16f_d9511cb3515c4041bcc4f655f43e21fa/1080p/mp4/file.mp4" type="video/mp4" />
+                                
                             Sorry, your browser doesn't support embedded videos.
                         </video>
                     </div>

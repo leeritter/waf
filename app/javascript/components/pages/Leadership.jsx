@@ -70,7 +70,7 @@ const Leadership = () => {
     const advisoryText = `Jasmine Wadsworth, Cedric Berry, Anne Morin, Lavern Davis, Charles Hunter, Chisao Hata, Richard Donin, Cottrell White`;
 
     return (
-        <div className="page-wrapper">
+        <div className="page-wrapper --is-leadership">
             <Banner themeLight={false} alignLeft={true} headline="Leadership" className="--has-graphic" />            
             <GalleryStaff slides={slides} />
             <TextBlock themeLight={true} heading="Executive Team" leftText={executiveText} singleCol />

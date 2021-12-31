@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from 'classnames';
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,6 +10,7 @@ import Modal from 'react-modal';
 const Gallery = ({slides}) => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [modalImage, setModalImage] = useState(null);
+    const [isMobile, setIsMobile] = useState(false);
 
     function openModal(url) {
         setModalImage(url);
@@ -24,15 +25,22 @@ const Gallery = ({slides}) => {
         'cmpt-gallery',        
     );
 
+    useEffect(() => {
+        const windowWidth = window.innerWidth;
+        if (windowWidth < 768) {
+            setIsMobile(true);
+        }
+    }, []);
+
     Modal.setAppElement(document.getElementsByClassName('page-wrapper')[0]);
 
     return (
         <div className={cmptClasses}>
             <div className="cmpt-gallery__wrapper">
                 <Swiper
-                    spaceBetween={50}
-                    slidesPerView={4}
-                    slidesOffsetBefore={80}
+                    spaceBetween={isMobile ? 30 : 50}
+                    slidesPerView={isMobile ? 2 : 4}
+                    slidesOffsetBefore={isMobile ? 20 : 80}
                     freeMode={true}
                 >
                     {slides.map((slide) => (
@@ -57,7 +65,8 @@ const Gallery = ({slides}) => {
                 <div className="modalContent">
                     <figure className="modalFigure">
                         <img className="modalImage" src={modalImage} />
-                        <caption className="modalCaption">Test caption</caption>
+                        {/* eventually add captions to these */}
+                        {/* <figcaption className="modalCaption">Test caption</figcaption> */}
                     </figure>
                 </div>
             </Modal>
