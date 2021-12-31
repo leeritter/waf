@@ -1,8 +1,13 @@
 @import "variables";
 
 .cmpt-link-list {
-  margin-top: 185px;
-  margin-bottom: 120px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  @media (min-width: $bp-md) {
+    margin-top: 185px;
+    margin-bottom: 120px;
+  }
 
   ol {
     width: 100%;
@@ -46,8 +51,12 @@
 }
 
 .cmpt-link-list__heading {
-  margin-bottom: 120px;
+  margin-bottom: 40px;
   color: $purple-5;
+
+  @media (min-width: $bp-md) {
+    margin-bottom: 120px;
+  }
 }
 
 .cmpt-link-list__list-wrapper {

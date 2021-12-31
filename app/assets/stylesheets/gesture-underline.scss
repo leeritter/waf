@@ -1,6 +1,6 @@
 a.cmpt-gesture-underline {
   font-family: "Newsreader", serif;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.3em;
   color: #000;
   display: inline-block;
@@ -8,16 +8,26 @@ a.cmpt-gesture-underline {
   position: relative;
   align-self: flex-start;
 
+  @media (min-width: $bp-md) {
+    font-size: 24px;
+  }
+
   &:after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -24px;
     transform: translateX(-50%);
-    height: 30px;
-    width: 190px;
+    bottom: -15px;
+    height: 14px;
+    width: 120px;
     background: url(asset-path("gesture-01.svg")) center bottom no-repeat;
     background-size: contain;
+
+    @media (min-width: $bp-md) {
+      bottom: -24px;
+      height: 30px;
+      width: 190px;
+    }
   }
 
   &:hover {

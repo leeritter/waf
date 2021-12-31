@@ -12,12 +12,17 @@
   &:after {
     content: "";
     width: 50%;
-    height: 220px;
     background: linear-gradient(98.24deg, $purple-7 30%, $purple-1 70%);
     position: absolute;
     right: 0;
-    bottom: -100px;
     transform: skewY(-10deg);
+    height: 150px;
+    bottom: -50px;
+
+    @media (min-width: $bp-md) {
+      height: 220px;
+      bottom: -100px;
+    }
   }
 }
 
@@ -26,7 +31,11 @@
   justify-content: center;
   background: $purple-1 url(asset-path("map.svg")) top 450px right no-repeat;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 78%);
-  padding-bottom: 400px;
+  padding-bottom: 250px;
+
+  @media (min-width: $bp-md) {
+    padding-bottom: 400px;
+  }
 }
 
 .cmpt-banner-home__content {
@@ -45,26 +54,33 @@
 }
 
 .cmpt-banner-home__photo {
-  margin-top: -300px;
-  padding-top: 600px;
-  padding-bottom: 100px;
+  margin-top: -210px;
+  padding-top: 500px;
+  padding-bottom: 50px;
   background: url(asset-path("home-hero.jpg")) center center no-repeat;
   background-size: cover;
   width: 100%;
   display: flex;
   justify-content: center;
+
+  @media (min-width: $bp-md) {
+    margin-top: -300px;
+    padding-top: 600px;
+    padding-bottom: 100px;
+  }
 }
 
 .cmpt-banner-home__photo-text {
   color: #fff;
 
   h2 {
-    width: 390px;
+    width: 100%;
     font-weight: 400;
     font-size: 34px;
     line-height: 1.2em;
 
     @media (min-width: $bp-md) {
+      width: 390px;
       font-size: 64px;
     }
   }
@@ -77,9 +93,10 @@
   color: #fff;
   width: 488px;
   max-width: 100%;
-  margin-top: 117px;
+  margin-top: 60px;
 
   @media (min-width: $bp-md) {
     font-size: 32px;
+    margin-top: 117px;
   }
 }

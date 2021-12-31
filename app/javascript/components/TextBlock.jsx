@@ -7,7 +7,8 @@ const TextBlock = ({themeLight, leftText, rightText, heading, vPadding = "defaul
         themeLight && '--is-light',
         !themeLight && '--is-dark',
         singleCol && '--is-single-col',
-        `--padding-${vPadding}`
+        `--padding-${vPadding}`,
+        !rightText && '--no-right-col',
     );
 
     return (

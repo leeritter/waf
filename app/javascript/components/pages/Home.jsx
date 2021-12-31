@@ -11,7 +11,7 @@ import posterImage from '../../../assets/images/vid-splash.png';
 
 const Home = () => {
     const leftText = "<p>Through community events and educational programming, we amplify regional contributions to arts and culture. Our media archive highlights the cultural heritage of Portland's historic Albina District.</p>";
-    const videoText = "<h3>Featured</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada venenatis faucibus interdum amet, nullam dignissim sed in ut. Lorem in facilisis nisi bibendum amet.</p>";
+    const videoText = `<h3>Featured</h3><p>World Arts Foundation Inc. presents <em>Keep Alive The Dream</em>. This historical film directed by Elijah Hasan documents African-American communities in Oregon honoring the legacy of Rev. Dr. Martin Luther King, Jr.</p>`;
     const workLinks = [
         {
             text: "MLK Annual Tribute",
