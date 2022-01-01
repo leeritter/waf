@@ -49,6 +49,8 @@
 }
 
 .swiper-container {
+  overflow: hidden;
+
   &:hover {
     cursor: url(asset-path("cursor-drag.svg")) 45 45, grab;
   }

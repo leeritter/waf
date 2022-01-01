@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classNames from 'classnames';
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-// import 'swiper/swiper-bundle.min.css';
-// import 'swiper/swiper.min.css';
-import 'swiper/swiper.scss';
 import Modal from 'react-modal';
 
 const Gallery = ({slides}) => {

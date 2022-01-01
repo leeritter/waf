@@ -3,12 +3,6 @@ import classNames from 'classnames';
 import { Mousewheel } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
-// import 'swiper/swiper-bundle.min.css';
-// import 'swiper/swiper.min.css';
-
-import 'swiper/swiper.scss';
-
 const GalleryStaff = ({slides}) => {    
     const [isMobile, setIsMobile] = useState(false);
 
