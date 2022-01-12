@@ -11,11 +11,11 @@
 .cmpt-gallery-staff {
   display: flex;
   flex-direction: column;
-  padding: 80px 0 40px 0;
+  padding-top: 80px;
 
   @media (min-width: $bp-md) {
     flex-direction: row;
-    padding: 160px 0;
+    padding-top: 160px;
   }
 
   .swiper-wrapper {
@@ -26,6 +26,7 @@
 
 .cmpt-gallery-staff__wrapper {
   overflow: hidden;
+  width: 100%;
 }
 
 .cmpt-gallery-staff__heading {
@@ -67,6 +68,10 @@
   object-fit: cover;
 }
 
+.cmpt-gallery-staff__item {
+  max-width: 350px;
+}
+
 .cmpt-gallery-staff__item-name {
   margin-top: 28px;
   font-family: "Poppins", sans-serif;
@@ -81,4 +86,12 @@
   font-style: italic;
   font-size: 16px;
   text-align: left;
+}
+
+.team-text {
+  margin-top: 80px;
+
+  @media (min-width: $bp-md) {
+    margin-top: 160px;
+  }
 }

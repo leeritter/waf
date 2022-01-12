@@ -1,7 +1,8 @@
 import React from "react";
 import classNames from 'classnames';
 
-const TextBlock = ({themeLight, leftText, rightText, heading, vPadding = "default", singleCol }) => {
+const TextBlock = ({themeLight, leftText, rightText, heading, vPadding = "default", singleCol, className }) => {
+    console.log(className);
     const cmptClasses = classNames(
         'cmpt-text-block',
         themeLight && '--is-light',
@@ -9,6 +10,7 @@ const TextBlock = ({themeLight, leftText, rightText, heading, vPadding = "defaul
         singleCol && '--is-single-col',
         `--padding-${vPadding}`,
         !rightText && '--no-right-col',
+        className && `${className}`
     );
 
     return (

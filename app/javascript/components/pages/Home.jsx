@@ -35,11 +35,10 @@ const Home = () => {
         <div className="page-wrapper">
             <Nav />
             <BannerHome themeLight={true} alignLeft={true} />
-            <TextBlock themeLight={false} heading="What we do" leftText={leftText} />
-            {/* <Video themeLight={false} text={videoText} poster={posterImage} videoSrc="videos/dream.mp4" /> */}
+            <TextBlock themeLight={false} heading="What we do" leftText={leftText} />            
             <Video themeLight={false} text={videoText} poster={posterImage} />
-            <LinkList heading="Our Work" links={workLinks} />
-            <CollageAbout />
+            {/* <LinkList heading="Our Work" links={workLinks} /> */}
+            {/* <CollageAbout /> */}
             <Footer />
         </div >
     );

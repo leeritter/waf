@@ -14,9 +14,8 @@ const Footer = (props) => {
                 <div className="cmpt-footer__left">
                     <span className="cmpt-footer__byline">World Arts Foundation Inc.</span>
                     <div className="cmpt-footer__social">
-                        <a href="https://www.facebook.com/worldartsfoundation/" target="_blank" rel="noopener noreferrer"><img src={icon_fb} /></a>
-                        <a href="https://www.instagram.com/wafpdx/" target="_blank" rel="noopener noreferrer"><img src={icon_insta} /></a>
-                        <a href="https://twitter.com/WAFIPDX?s=17" target="_blank" rel="noopener noreferrer"><img src={icon_twitter} /></a>
+                        <a href="https://www.facebook.com/wafpdx" target="_blank" rel="noopener noreferrer"><img src={icon_fb} /></a>
+                        <a href="https://www.instagram.com/wafpdx/" target="_blank" rel="noopener noreferrer"><img src={icon_insta} /></a>                        
                         <a href="https://www.youtube.com/channel/UC-4PwMXuB7MaLiWg55w4ldg" target="_blank" rel="noopener noreferrer"><img src={icon_youtube} /></a>
                     </div>
                     <span className="cmpt-footer__copy">&copy; 2021 World Arts Foundation Inc.</span>

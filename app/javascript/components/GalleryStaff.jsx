@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Mousewheel } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const GalleryStaff = ({slides}) => {    
+const GalleryStaff = ({slides, headline}) => {    
     const [isMobile, setIsMobile] = useState(false);
 
     const cmptClasses = classNames(
@@ -20,13 +20,13 @@ const GalleryStaff = ({slides}) => {
     return (
         <div className={cmptClasses}>
             <div className="cmpt-gallery-staff__heading">
-                <h2 className="heading-m">Our Board</h2>
+                <h2 className="heading-m">{headline}</h2>
             </div>
             <div className="cmpt-gallery-staff__wrapper">
                 <Swiper
                     modules={[Mousewheel]}
                     spaceBetween={isMobile ? 30 : 50}
-                    slidesPerView={isMobile ? 2 : 4}
+                    slidesPerView={isMobile ? 2 : 3.5}
                     slidesOffsetBefore={isMobile ? 40 : 80}
                     freeMode={true}
                     mousewheel={true}

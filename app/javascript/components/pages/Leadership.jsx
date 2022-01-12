@@ -17,10 +17,10 @@ const Leadership = () => {
 
     const slides = [
         {
-            key: 6,
-            url: galleryImage06,
-            name: "Michael Grice",
-            role: "President",
+            key: 7,
+            url: galleryImage07,
+            name: "Donny R. Adair",
+            role: "Board Member",
         },
         {
             key: 3,
@@ -29,22 +29,16 @@ const Leadership = () => {
             role: "Secretary/Treasurer",
         },
         {
-            key: 7,
-            url: galleryImage07,
-            name: "Donny R. Adair",
-            role: "Board Member",
-        },
-        {
-            key: 5,
-            url: galleryImage05,
-            name: "Gwen Thompson",
-            role: "Board Member",
-        },
-        {
             key: 4,
             url: galleryImage04,
             name: "Sunshine Dixon",
             role: "Board Member",
+        },
+        {
+            key: 6,
+            url: galleryImage06,
+            name: "Michael Grice",
+            role: "President",
         },
         {
             key: 2,
@@ -53,27 +47,49 @@ const Leadership = () => {
             role: "Board Member",
         },
         {
-            key: 1,
-            url: galleryImage01,
-            name: "Sandra Wadsworth",
-            role: "Board Member",
-        },                                                
-        {
             key: 8,
             url: galleryImage08,
             name: "Bobby Smith",
             role: "Board Member",
-        },
+        },                
+        {
+            key: 5,
+            url: galleryImage05,
+            name: "Gwen Thompson",
+            role: "Board Member",
+        },                
+        {
+            key: 1,
+            url: galleryImage01,
+            name: "Sandra Wadsworth",
+            role: "Board Member",
+        },                                                        
     ];
 
-    const executiveText = `Sandra Wadsworth, Bobby Smith, Kevin Berry, Val Peterson, Joe "Bean" Keller, Arietta Ward, Heather Coleman-Cox, James Wright, Bobby Pallotta, Steve Hollingsworth, Pat Dobbins, Pearl Hill, Dr. Harriet Adair, Cheanice Stone, Lessie Williams`;
+    const staffSlides = [
+        {
+            key: 8,
+            url: galleryImage08,
+            name: "Bobby Smith",
+            role: "Archivist",
+        },                        
+        {
+            key: 1,
+            url: galleryImage01,
+            name: "Sandra Wadsworth",
+            role: "Executive Director",
+        },                                                        
+    ];
+
+    const executiveText = `Kevin Berry, Val Peterson, Joe "Bean" Keller, Arietta Ward, Heather Coleman-Cox, James Wright, Bobby Pallotta, Steve Hollingsworth, Pat Dobbins, Pearl Hill, Dr. Harriet Adair, Cheanice Stone, Lessie Williams`;
     const advisoryText = `Jasmine Wadsworth, Cedric Berry, Anne Morin, Lavern Davis, Charles Hunter, Chisao Hata, Richard Donin, Cottrell White`;
 
     return (
         <div className="page-wrapper --is-leadership">
             <Banner themeLight={false} alignLeft={true} headline="Leadership" className="--has-graphic" />            
-            <GalleryStaff slides={slides} />
-            <TextBlock themeLight={true} heading="Executive Team" leftText={executiveText} singleCol />
+            <GalleryStaff slides={slides} headline="Our Board" />
+            <GalleryStaff slides={staffSlides} headline="Our Staff" />
+            <TextBlock className="team-text" themeLight={true} heading="Executive Team" leftText={executiveText} singleCol />
             <TextBlock themeLight={true} heading="Advisory Council" leftText={advisoryText} vPadding="lg" singleCol />
             <Footer />
         </div >
