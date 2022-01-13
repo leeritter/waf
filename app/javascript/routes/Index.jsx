@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop";
 import Home from "../components/pages/Home";
 import Archive from "../components/pages/Archive";
+import ArchiveBeta from "../components/pages/ArchiveBeta";
 import About from "../components/pages/About";
 import OurWork from "../components/pages/OurWork";
 import Leadership from "../components/pages/Leadership";
@@ -15,6 +16,7 @@ export default (
             <Route path="/" exact component={Home} />
             <Route path="/about" exact component={About} />
             <Route path="/archive" exact component={Archive} />
+            <Route path="/archive-beta" exact component={ArchiveBeta} />
             <Route path="/our-work" exact component={OurWork} />
             <Route path="/leadership" exact component={Leadership} />
             <Route path="/donate" exact component={Donate} />
