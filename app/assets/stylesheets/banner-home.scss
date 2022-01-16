@@ -30,7 +30,7 @@
   width: 100%;
   max-width: $content-width;
   padding: 0px 40px;
-  margin-top: 180px;
+  margin-top: 80px;
   display: flex;
   justify-content: space-between;
   pointer-events: all;
@@ -38,14 +38,27 @@
   @media (min-width: $bp-md) {
     padding: 0px 120px;
   }
+
+  @media (min-width: $bp-lg) {
+    margin-top: 180px;
+  }
 }
 
 .cmpt-banner-home__left {
   width: 48%;
+  display: none;
+
+  @media (min-width: $bp-lg) {
+    display: block;
+  }
 }
 
 .cmpt-banner-home__right {
-  width: 48%;
+  width: 100%;
+
+  @media (min-width: $bp-lg) {
+    width: 48%;
+  }
 }
 
 .cmpt-banner-home__wrapper {
@@ -70,19 +83,24 @@
   width: 100%;
   max-width: 1200px;
   position: absolute;
-  bottom: 10%;
   z-index: 1;
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
+  display: none;
 
   @media (min-width: $bp-lg) {
-    bottom: 6%;
+    display: block;
+    bottom: 62px;
+  }
+
+  @media (min-width: $bp-xl) {
+    bottom: 20px;
   }
 }
 
 .cmpt-banner-home__graphic {
-  width: 48%;
+  width: 58%;
 }
 
 .cmpt-banner-home__photo {

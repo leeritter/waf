@@ -2,7 +2,7 @@ import React from "react";
 import GestureUnderline from "./GestureUnderline";
 import classNames from 'classnames';
 
-import graphic from '../../assets/images/home-graphic-combined.svg';
+import graphic from '../../assets/images/home-graphic-combined-2.svg';
 
 const BannerHome = () => {
     const cmptClasses = classNames({
