@@ -30,7 +30,7 @@
   width: 100%;
   max-width: $content-width;
   padding: 0px 40px;
-  margin-top: 80px;
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
   pointer-events: all;
@@ -40,7 +40,7 @@
   }
 
   @media (min-width: $bp-lg) {
-    margin-top: 180px;
+    margin-top: 80px;
   }
 }
 
@@ -104,24 +104,39 @@
 }
 
 .cmpt-banner-home__photo {
-  margin-top: -210px;
+  margin-top: -110px;
   padding-top: 500px;
   padding-bottom: 50px;
-  background: url(asset-path("home-hero.jpg")) center center no-repeat;
+  background: url(asset-path("home-hero-2.jpg")) center center no-repeat;
   background-size: cover;
   width: 100%;
   display: flex;
   justify-content: center;
 
   @media (min-width: $bp-md) {
-    margin-top: -300px;
+    margin-top: -170px;
     padding-top: 600px;
     padding-bottom: 100px;
+  }
+
+  &:after {
+    content: "";
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(transparent, #000);
+
+    @media (min-width: $bp-md) {
+      height: 600px;
+    }
   }
 }
 
 .cmpt-banner-home__photo-text {
   color: #fff;
+  z-index: 1;
 
   h2 {
     width: 100%;

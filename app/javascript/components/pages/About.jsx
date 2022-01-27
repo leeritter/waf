@@ -7,6 +7,7 @@ import Footer from "../Footer";
 
 import galleryImage01 from '../../../assets/images/about-gallery/01.jpg';
 import galleryImage02 from '../../../assets/images/about-gallery/02.jpg';
+import galleryImage03 from '../../../assets/images/about-gallery/03.jpg';
 import galleryImage04 from '../../../assets/images/about-gallery/04.jpg';
 import galleryImage05 from '../../../assets/images/about-gallery/05.jpg';
 import galleryImage06 from '../../../assets/images/about-gallery/06.jpg';
@@ -31,6 +32,10 @@ const About = () => {
         {
             key: 2,
             url: galleryImage02
+        },
+        {
+            key: 3,
+            url: galleryImage03
         },
         {
             key: 4,
