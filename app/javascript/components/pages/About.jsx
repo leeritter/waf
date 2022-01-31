@@ -4,6 +4,7 @@ import TextBlock from "../TextBlock";
 import Gallery from '../Gallery';
 import CollageWork from "../CollageWork";
 import Footer from "../Footer";
+import Nav from "../Nav";
 
 import galleryImage01 from '../../../assets/images/about-gallery/01.jpg';
 import galleryImage02 from '../../../assets/images/about-gallery/02.jpg';
@@ -73,6 +74,7 @@ const About = () => {
 
     return (
         <div className="page-wrapper">
+            <Nav />
             <Banner themeLight={false} alignLeft={true} headline="About the foundation" className="--has-graphic" />
             <TextBlock themeLight={true} heading="Our Mission" leftText={leftText} rightText={rightText} vPadding="lg" />
             <Gallery slides={slides} />

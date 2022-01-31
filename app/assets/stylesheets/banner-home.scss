@@ -67,7 +67,10 @@
   background: $purple-1;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 78%);
   padding-bottom: 130px;
-  padding-top: 100px;
+
+  @media (min-width: $bp-md) {
+    padding-top: 100px;
+  }
 }
 
 .cmpt-banner-home__bg {

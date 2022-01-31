@@ -3,6 +3,7 @@ import Banner from "../Banner";
 import DonateBlock from '../DonateBlock';
 import Sponsors from '../Sponsors';
 import Footer from "../Footer";
+import Nav from "../Nav";
 
 import sponsorLogo01 from '../../../assets/images/sponsors/logo-01.png';
 import sponsorLogo02 from '../../../assets/images/sponsors/logo-02.png';
@@ -19,10 +20,40 @@ import sponsorLogo12 from '../../../assets/images/sponsors/logo-12.png';
 import sponsorLogo13 from '../../../assets/images/sponsors/logo-13.png';
 import sponsorLogo14 from '../../../assets/images/sponsors/logo-14.png';
 import sponsorLogo15 from '../../../assets/images/sponsors/logo-15.png';
+import sponsorLogo16 from '../../../assets/images/sponsors/logo-16.png';
+import sponsorLogo17 from '../../../assets/images/sponsors/logo-17.png';
+import sponsorLogo18 from '../../../assets/images/sponsors/logo-18.png';
+import sponsorLogo19 from '../../../assets/images/sponsors/logo-19.png';
+import sponsorLogo20 from '../../../assets/images/sponsors/logo-20.png';
+import sponsorLogo21 from '../../../assets/images/sponsors/logo-21.png';
 
 const Donate = () => {
 
     const logos = [
+        {
+            name: "Regional Arts & Culture Council",
+            url: sponsorLogo16
+        },
+        {
+            name: "The Collins Foundation",
+            url: sponsorLogo21
+        },
+        {
+            name: "Oregon Humanities",
+            url: sponsorLogo17
+        },
+        {
+            name: "Hollywood Theatre",
+            url: sponsorLogo18
+        },
+        {
+            name: "Enterprise",
+            url: sponsorLogo19
+        },
+        {
+            name: "Representative Janelle Bynum",
+            url: sponsorLogo20
+        },
         {
             name: "City of Portland",
             url: sponsorLogo01
@@ -87,6 +118,7 @@ const Donate = () => {
 
     return (
         <div className="page-wrapper">
+            <Nav />
             <Banner themeLight alignLeft={true} headline="Donate" hasDonateCta />
             <DonateBlock />
             <Sponsors logos={logos} />

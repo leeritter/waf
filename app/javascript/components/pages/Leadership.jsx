@@ -3,6 +3,7 @@ import Banner from "../Banner";
 import GalleryStaff from '../GalleryStaff';
 import TextBlock from "../TextBlock";
 import Footer from "../Footer";
+import Nav from "../Nav";
 
 import galleryImage01 from '../../../assets/images/board/boardmember_01.jpg';
 import galleryImage02 from '../../../assets/images/board/boardmember_02.jpg';
@@ -86,6 +87,7 @@ const Leadership = () => {
 
     return (
         <div className="page-wrapper --is-leadership">
+            <Nav />
             <Banner themeLight={false} alignLeft={true} headline="Leadership" className="--has-graphic" />            
             <GalleryStaff slides={slides} headline="Our Board" />
             <GalleryStaff slides={staffSlides} headline="Our Staff" />

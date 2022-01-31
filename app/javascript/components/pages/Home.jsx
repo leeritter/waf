@@ -7,7 +7,6 @@ import LinkList from "../LinkList";
 import CollageAbout from "../CollageAbout";
 import Footer from "../Footer";
 import Nav from "../Nav";
-// import posterImage from '../../../assets/images/vid-splash.png';
 import posterImage from '../../../assets/images/video-poster.jpg';
 
 const Home = () => {

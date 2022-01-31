@@ -52,7 +52,7 @@ const Nav = (props) => {
 
             <div className={cmptClasses}>
                 <nav className='global-nav'>
-                    <Link className="global-nav__home-link" to="/">WORLD ARTS FOUNDATION INC.</Link>
+                    <Link className="global-nav__home-link" to="/">WORLD ARTS FOUNDATION INC.</Link>                    
                     <ul className="global-nav__links">
                         <li><Link className={activeLink == 0 ? '--is-active' : ''} ref={linkRefs[0]} to="/about">About</Link></li>
                         <li><Link className={activeLink == 1 ? '--is-active' : ''} ref={linkRefs[1]} to="/archive">Archive</Link></li>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Nav from "./Nav";
 import classNames from 'classnames';
 
 const Banner = ({themeLight, alignLeft, headline, className, hasDonateCta}) => {
@@ -17,7 +16,6 @@ const Banner = ({themeLight, alignLeft, headline, className, hasDonateCta}) => {
     return (
         <div className={cmptClasses}>
             <div className="cmpt-banner__wrapper">
-                <Nav themeLight={themeLight} />
                 <div className="cmpt-banner__content">
                     {headline &&
                         <h1 className="heading-xl">{headline}</h1>
