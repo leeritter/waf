@@ -24,7 +24,7 @@ const Footer = (props) => {
                 <div className="cmpt-footer__right">
                     <ul className="cmpt-footer__links">
                         <li><Link to="/about">About</Link></li>
-                        <li><Link to="/archive">Archive</Link></li>
+                        <li><Link to="/archive">Cultural Archive</Link></li>
                         <li><Link to="/our-work">Our Work</Link></li>
                         <li><Link to="/leadership">Leadership</Link></li>
                         <li><Link to="/donate">Donate</Link></li>

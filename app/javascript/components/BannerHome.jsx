@@ -21,7 +21,7 @@ const BannerHome = () => {
                         </div>
                         <div className="cmpt-banner-home__right">
                             <div className="banner-home-subhead">
-                                <p>Based in Portland, Oregon. Preserving African-American contributions in American culture, since 1978.</p>
+                                <p>Based in Portland, Oregon. Preserving African-American contributions in American culture, since 1976.</p>
                                 <GestureUnderline text="About Us" url="/about" />
                             </div>
                         </div>                        

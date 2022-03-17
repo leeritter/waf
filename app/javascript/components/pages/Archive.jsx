@@ -9,7 +9,7 @@ const Archive = () => {
     return (
         <div className="page-wrapper --is-dark">
             <Nav />
-            <Banner themeLight={true} alignLeft={true} headline="The archive" />
+            <Banner themeLight={true} alignLeft={true} headline="Albina<br/>Community Archive" />
             <TextBlock themeLight={false} heading="Archive Coming Soon..." leftText={leftText} vPadding="lg" />
             <Footer />
         </div>
