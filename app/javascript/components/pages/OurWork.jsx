@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Banner from "../Banner";
 import WorkBlock from '../WorkBlock';
-import CollageLeadership from '../CollageLeadership';
 import Footer from "../Footer";
 import Nav from "../Nav";
 import Modal from 'react-modal';
 import Video from "../Video";
+import Divider from "../Divider";
 
 import image01 from '../../../assets/images/work-block-01.jpg';
 import image02 from '../../../assets/images/work-block-02.jpg';
@@ -63,7 +62,12 @@ const OurWork = () => {
                 imageLeft 
                 link={block_3_link}                
             />
-            {/* <CollageLeadership /> */}
+
+            <div className="global-container">
+                <h2 className="heading-xl">Our Legacy</h2>
+                <Divider />
+            </div>
+            
             <Footer />
 
             <Modal
