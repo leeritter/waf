@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from 'classnames';
 import GestureUnderline from "./GestureUnderline";
 
-const WorkBlock = ({blockNumber, imageLeft, heading, text, link, image, sideText}) => {
+const WorkBlock = ({blockNumber, imageLeft, heading, text, link, image, sideText, onClickFn}) => {
+    
     const cmptClasses = classNames(
         "cmpt-work-block",
         "global-container",
         imageLeft && '--image-left',
         !imageLeft && '--image-right',
-    );
+    );    
 
     return (
         <div className={cmptClasses}>
@@ -23,10 +24,10 @@ const WorkBlock = ({blockNumber, imageLeft, heading, text, link, image, sideText
                 }
                 <div className="cmpt-work-block__text" dangerouslySetInnerHTML={{ __html: text }}></div>
                 {link &&
-                    <GestureUnderline text={link.text} url={link.url} isSmall />
+                    <GestureUnderline text={link.text} url={link.url} isSmall onClickFn={onClickFn} />
                 }
-            </div>            
-        </div>
+            </div>                  
+        </div>        
     );
 }
 

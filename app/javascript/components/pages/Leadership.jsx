@@ -46,25 +46,13 @@ const Leadership = () => {
             url: galleryImage02,
             name: "Shelia Searight",
             role: "Board Member",
-        },
-        {
-            key: 8,
-            url: galleryImage08,
-            name: "Bobby Smith",
-            role: "Board Member",
-        },                
+        },                   
         {
             key: 5,
             url: galleryImage05,
             name: "Gwen Thompson",
             role: "Board Member",
-        },                
-        {
-            key: 1,
-            url: galleryImage01,
-            name: "Sandra Wadsworth",
-            role: "Board Member",
-        },                                                        
+        },                                                                              
     ];
 
     const staffSlides = [

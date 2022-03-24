@@ -71,14 +71,21 @@
 
 .modalClose {
   position: absolute;
-  right: 80px;
-  top: 80px;
-  width: 50px;
-  height: 50px;
+  right: 20px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
   background: url(asset-path("button-close.svg")) center center no-repeat;
   background-size: cover;
   border: none;
   cursor: pointer;
+
+  @media (min-width: $bp-md) {
+    right: 80px;
+    top: 80px;
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .cmpt-gallery__button {

@@ -3,17 +3,6 @@
 .cmpt-video {
   text-align: center;
 
-  .global-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-
-    @media (min-width: $bp-md) {
-      padding: 150px 120px 200px 120px;
-    }
-  }
-
   &.--is-dark {
     background: $black-1;
     color: $white-1;
@@ -23,10 +12,6 @@
 .cmpt-video-wrapper {
   position: relative;
   width: 100%;
-
-  @media (min-width: $bp-md) {
-    width: 75%;
-  }
 }
 
 .cmpt-video-button {
@@ -35,14 +20,19 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: $purple-3;
   z-index: 1;
   color: $white-1;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
+
+  @media (min-width: $bp-md) {
+    width: 90px;
+    height: 90px;
+  }
 
   &:hover {
     background: $purple-4;
@@ -67,6 +57,7 @@
 
 .cmpt-video-player {
   width: 100%;
+  display: inherit;
 }
 
 .cmpt-video__text {
