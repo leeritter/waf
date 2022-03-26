@@ -77,15 +77,17 @@
 
 .cmpt-work-block__content {
   width: 100%;
+  margin-top: 20px;
 
   @media (min-width: $bp-md) {
+    margin-top: 0;
     width: 45%;
     max-width: 386px;
   }
 
   .cmpt-gesture-underline {
     margin-bottom: 40px;
-    margin-right: 60px;
+    margin-right: 50px;
 
     &:last-child {
       margin-right: 0;
@@ -97,23 +99,22 @@
   color: #656e7b;
   font-size: 18px;
   font-family: "Newsreader", serif;
-  margin-top: 20px;
   margin-bottom: 0px;
 
   @media (min-width: $bp-md) {
-    margin-top: 0;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
 }
 
 .cmpt-work-block__heading {
-  font-size: 36px;
+  font-size: 28px;
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   margin-bottom: 20px;
 
   @media (min-width: $bp-md) {
     margin-bottom: 60px;
+    font-size: 36px;
   }
 }
 

@@ -10,8 +10,22 @@ import Divider from "../Divider";
 import image01 from '../../../assets/images/work-block-01.jpg';
 import image02 from '../../../assets/images/work-block-02.jpg';
 import image03 from '../../../assets/images/work-block-03.jpg';
+import image04 from '../../../assets/images/alberta-street-project.jpg';
+import image05 from '../../../assets/images/race-talks.jpg';
+import image06 from '../../../assets/images/paaf.jpg';
+import image07 from '../../../assets/images/vancouver-cuhuch.jpg';
+import image08 from '../../../assets/images/sherman.jpg';
+import image09 from '../../../assets/images/golden-west.png';
+import image10 from '../../../assets/images/crb.png';
+import image11 from '../../../assets/images/railroad.png';
+import image12 from '../../../assets/images/youthsound.jpg';
+import image13 from '../../../assets/images/cjo.jpg';
+import image14 from '../../../assets/images/from-the-pulpit.png';
+import image15 from '../../../assets/images/dubois.png';
 import posterImage01 from '../../../assets/images/video-poster.jpg';
-import posterImage02 from '../../../assets/images/video-poster.jpg';
+import posterImage02 from '../../../assets/images/sherman-poster.png';
+import posterImage03 from '../../../assets/images/youthsound-poster.png';
+import posterImage04 from '../../../assets/images/pulpit-poster.png';
 
 const OurWork = () => {
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -27,12 +41,25 @@ const OurWork = () => {
     const block_6_text = `<p>From 2009-2013, founder Ron Craig curated this festival documenting African-American cinema of the 1920s-1980s. Screenings included documentaries, blaxploitation films, and historical dramas. Support was provided by WAFI and McMenamins.</p>`;
     const block_7_text = `<p>This 2009 book by Raymond Burrell III documents the legacy of a historic landmark, Vancouver Avenue Baptist Church. Research for the book was funded by WAFI in partnership with Meyer Memorial Trust.</p>`;
     const block_8_text = `<p>Directed by Thara Memory, this 2009 stage program highlights Portland's jazz history during the 1940s-50s. Support was provided by WAFI and the Regional Arts & Culture Council.</p>`;
+    const block_9_text = `<p>This permanent exhibit installed in 2009 tells the story of Portland’s African-American community in the early 1900s. In partnership with Central City Concern, WAFI served on the exhibit's advisory committee.</p>`;
+    const block_10_text = `<p>Founded by WAFI in 1983, this multicultural jazz orchestra was comprised of middle and high school youth in Portland Public Schools under the direction of Thara Memory, Greg McKelvey, and Ronnye Harrison. In 2005, Memory went on to form the non-profit American Music Program to mentor youth jazz musicians and compete in national competitions. The program cultivated the talents of youth musicians such as Esperanza Spalding, Charlie Brown III, and Domo Branch.</p>`;
+    const block_11_text = `<p>Released in 1985, this documentary film directed by Michael “Chappie” Grice captures the oral history of Oregon's African-American railroad porters in the early and mid-20th century. The film was produced by WAFI and funded by Oregon Humanities.</p>`;
+    const block_12_text = `<p>Formed by director Kenneth W. Berry in 1982, the YouthSound mass choir and stage band was comprised of middle and high school youth in Portland Public Schools. The group performed throughout the 1980s at cultural events throughout the city of Portland.</p>`;
+    const block_13_text = `<p>With assistance from WAFI, this 24-piece orchestra directed by Thara Memory performed a historical suite of 20th century jazz compositions, re-imagined through soul music and international influence. CJO performed unique thematic concerts throughout the Pacific Northwest during the 1970s and early 1980s.</p>`;
+    const block_14_text = `<p>This 1978 oral history program featured theatrical performances drawing from the work of Dr. Martin Luther King, Jr. The program raised funds for scholarships sending African-American students to Catlin Gabel School. The program was produced by WAFI and broadcast on KGW-TV.</p>`;
+    const block_15_text = `<p>This 1977 oral history program featured theatrical performances drawing from the work of W.E.B. DuBois, founder of the NAACP.</p>`;
 
-    const video_url_1 = "https://video.wixstatic.com/video/d4b16f_d9511cb3515c4041bcc4f655f43e21fa/1080p/mp4/file.mp4";
-    const video_url_2 = "https://video.wixstatic.com/video/d4b16f_d9511cb3515c4041bcc4f655f43e21fa/1080p/mp4/file.mp4";
+    const video_url_1 = "https://world-arts-prod.s3.amazonaws.com/website/keep-alive-the-dream.mp4";
+    const video_url_2 = "https://world-arts-prod.s3.amazonaws.com/website/sherman.mp4";
+    const video_url_3 = "https://world-arts-prod.s3.amazonaws.com/website/sherman-documentary.mp4";
+    const video_url_4 = "https://world-arts-prod.s3.amazonaws.com/website/railroad.mp4";
+    const video_url_5 = "https://world-arts-prod.s3.amazonaws.com/website/youthsound.mp4";
+    const video_url_6 = "https://world-arts-prod.s3.amazonaws.com/website/cjo.mp4";
+    const video_url_7 = "https://world-arts-prod.s3.amazonaws.com/website/from-the-pulpit.mp4";
     
     const block_1_link = {
         text: "Watch the documentary",
+        onClickFn: () => {playVideo(video_url_1, posterImage01)}
     }
     const block_2_link = {
         text: "Visit Albina Music Trust",
@@ -63,9 +90,41 @@ const OurWork = () => {
         text: "View the article",
         url: "https://www.oregonlive.com/portland/2009/08/relics_of_a_vibrant_faith_anti.html"
     }
-
     const block_8_link = {
-        text: "Watch the performance",
+        text: "Watch performance",
+        onClickFn: () => {playVideo(video_url_2, posterImage02)}
+    }
+    const block_8a_link = {
+        text: "Watch documentary",
+        onClickFn: () => {playVideo(video_url_3)}
+    }
+    const block_9_link = {
+        text: "Visit the site",
+        url: "https://centralcityconcern.org/blog/the-golden-west-hotel/"
+    }
+    const block_10_link = {
+        text: "Visit the site",
+        url: "https://en.wikipedia.org/wiki/American_Music_Program"
+    }
+    const block_11_link = {
+        text: "View the documentary",
+        onClickFn: () => {playVideo(video_url_4)}
+    }
+    const block_12_link = {
+        text: "View the performance",
+        onClickFn: () => {playVideo(video_url_5, posterImage03)}
+    }
+    const block_13_link = {
+        text: "View the performance",
+        onClickFn: () => {playVideo(video_url_6)}
+    }
+    const block_14_link = {
+        text: "View the performance",
+        onClickFn: () => {playVideo(video_url_7, posterImage04)}
+    }
+    const block_15_link = {
+        text: "View the program",
+        url: "https://credo.library.umass.edu/view/pageturn/mums312-b287-i016/#page/5/mode/1up"
     }
 
     function playVideo(videoSrc, posterSrc) {
@@ -87,7 +146,6 @@ const OurWork = () => {
                 image={image01} 
                 imageLeft
                 link={block_1_link}
-                onClickFn={() => {playVideo(video_url_1, posterImage01)}}
             />
             <WorkBlock 
                 blockNumber="02" 
@@ -113,7 +171,7 @@ const OurWork = () => {
             <WorkBlock 
                 heading="Alberta Street Project"
                 text={block_4_text} 
-                image={image01} 
+                image={image04} 
                 imageLeft
                 link={block_4_link}
                 link_2={block_4a_link}
@@ -122,14 +180,14 @@ const OurWork = () => {
             <WorkBlock 
                 heading="Race Talks"
                 text={block_5_text} 
-                image={image01} 
+                image={image05} 
                 link={block_5_link}
             />
 
             <WorkBlock 
                 heading="Portland African-American Film Festival"
                 text={block_6_text} 
-                image={image01} 
+                image={image06} 
                 imageLeft
                 link={block_6_link}
             />
@@ -137,17 +195,69 @@ const OurWork = () => {
             <WorkBlock 
                 heading="Yesterday, Today, and Forever: Vancouver Avenue Baptist Church"
                 text={block_7_text} 
-                image={image01} 
+                image={image07} 
                 link={block_7_link}
             />
 
             <WorkBlock 
                 heading="Sherman: A Jazz Opera"
                 text={block_8_text} 
-                image={image01} 
+                image={image08} 
                 imageLeft
                 link={block_8_link}
-                onClickFn={() => {playVideo(video_url_2, posterImage02)}}
+                link_2={block_8a_link}
+            />
+
+            <WorkBlock 
+                heading="Golden West Hotel"
+                text={block_9_text} 
+                image={image09} 
+                link={block_9_link}
+            />
+
+            <WorkBlock 
+                heading="Cultural Recreation Band / American Music Program"
+                text={block_10_text} 
+                image={image10} 
+                imageLeft
+                link={block_10_link}
+            />
+
+            <WorkBlock 
+                heading="Black Families and The Railroad in Oregon"
+                text={block_11_text} 
+                image={image11} 
+                link={block_11_link}
+            />
+
+            <WorkBlock 
+                heading="YouthSound"
+                text={block_12_text} 
+                image={image12} 
+                imageLeft
+                link={block_12_link}
+            />
+
+            <WorkBlock 
+                heading="Creative Jazz Orchestra"
+                text={block_13_text} 
+                image={image13}
+                link={block_13_link}
+            />
+
+            <WorkBlock 
+                heading="From The Pulpit, From The People"
+                text={block_14_text} 
+                image={image14}
+                imageLeft
+                link={block_14_link}
+            />
+
+            <WorkBlock 
+                heading="DuBois, An Oral History Program"
+                text={block_15_text} 
+                image={image15}
+                link={block_15_link}
             />
             
             <Footer />

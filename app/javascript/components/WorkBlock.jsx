@@ -24,11 +24,11 @@ const WorkBlock = ({blockNumber, imageLeft, heading, text, link, link_2, image, 
                 }
                 <div className="cmpt-work-block__text" dangerouslySetInnerHTML={{ __html: text }}></div>
                 {link &&
-                    <GestureUnderline text={link.text} url={link.url} isSmall onClickFn={onClickFn} isExternal />
+                    <GestureUnderline text={link.text} url={link.url} isSmall onClickFn={link.onClickFn} isExternal />
                 }
 
                 {link_2 &&
-                    <GestureUnderline text={link_2.text} url={link_2.url} isSmall onClickFn={onClickFn} isExternal />
+                    <GestureUnderline text={link_2.text} url={link_2.url} isSmall onClickFn={link_2.onClickFn} isExternal />
                 }
             </div>                  
         </div>        
