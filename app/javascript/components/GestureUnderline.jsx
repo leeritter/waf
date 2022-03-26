@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classNames from 'classnames';
 
-const GestureUnderline = ({text, url, isLight, isSmall, isDonate, onClickFn}) => {
+const GestureUnderline = ({text, url, isLight, isSmall, isDonate, onClickFn, isExternal}) => {
     const cmptClasses = classNames({
         'cmpt-gesture-underline': true,
         'is-light': isLight,
@@ -27,7 +27,11 @@ const GestureUnderline = ({text, url, isLight, isSmall, isDonate, onClickFn}) =>
         <a className={cmptClasses} onClick={onClickFn}>{text}</a>
         }
 
-        {!isDonate && !onClickFn &&
+        {isExternal && !onClickFn &&
+            <a className={cmptClasses} href={url} target="_blank" rel="noopener">{text}</a>
+        }
+
+        {!isDonate && !onClickFn && !isExternal &&
             <Link 
                 className={cmptClasses} 
                 to={url}

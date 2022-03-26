@@ -85,6 +85,11 @@
 
   .cmpt-gesture-underline {
     margin-bottom: 40px;
+    margin-right: 60px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
