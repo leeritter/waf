@@ -12,7 +12,7 @@ const Sponsors = ({logos}) => {
                 <h2 className="cmpt-sponsors__headline">Our Sponsors Past &amp; Present</h2>
                 <div className="cmpt-sponsors__grid">
                     {logos.map((logo) => (
-                        <img className="cmpt-sponsors__logo" src={logo.url} alt={logo.name} />
+                        <img className="cmpt-sponsors__logo" src={logo.url} alt={logo.name} key={logo.name} />
                     ))}
                 </div>
             </div>            

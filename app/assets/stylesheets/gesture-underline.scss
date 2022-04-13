@@ -1,6 +1,6 @@
 @import "variables";
 
-a.cmpt-gesture-underline {
+.cmpt-gesture-underline {
   font-family: "Newsreader", serif;
   font-size: 20px;
   line-height: 1.3em;
@@ -10,6 +10,8 @@ a.cmpt-gesture-underline {
   position: relative;
   align-self: flex-start;
   cursor: pointer;
+  background: none;
+  border: none;
 
   @media (min-width: $bp-md) {
     font-size: 24px;
@@ -79,6 +81,27 @@ a.cmpt-gesture-underline {
     &:after {
       bottom: -30px;
       width: 150px;
+    }
+  }
+}
+
+.donate-form {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 14px;
+    left: 0;
+    bottom: -17px;
+    width: 170px;
+    background: url(asset-path("gesture-01-purple.svg")) center bottom no-repeat;
+    background-size: contain;
+
+    @media (min-width: $bp-md) {
+      bottom: -24px;
+      height: 30px;
+      width: 330px;
     }
   }
 }

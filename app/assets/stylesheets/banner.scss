@@ -80,13 +80,15 @@
   align-items: flex-start;
 }
 
-a.cmpt-banner__donate-cta {
+.cmpt-banner__donate-cta {
   background: $purple-3;
   border-radius: 4px;
   padding: 12px 18px;
   color: #fff;
   font-size: 18px;
   margin-top: 15px;
+  border: none;
+  cursor: pointer;
 
   @media (min-width: $bp-md) {
     padding: 16px 24px;

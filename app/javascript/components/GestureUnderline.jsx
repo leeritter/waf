@@ -13,14 +13,19 @@ const GestureUnderline = ({text, url, isLight, isSmall, isDonate, onClickFn, isE
     return (
         <>
         {isDonate && 
-            <a 
-                href="https://www.paypal.com/donate?token=4bQSWht7Is9Qj44IGCMedmeFp25xWSHsJEX6eps5m13PP6ZbbsFSkiEZbruLWek6YL53JDtO69Dp3Y--" 
-                className={cmptClasses}
-                target="_blank" 
-                rel="noopener noreferrer"
-            >
-                {text}
-            </a>
+            <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" className={'donate-form'}>
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="item_name" value="World Arts Foundation, Inc." />
+                <input type="hidden" name="item_number" value="" />
+                <input type="hidden" name="bn" value="Wix_Donate_WPS_IL" />
+                <input type="hidden" name="business" value="kberry49@comcast.net" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="hidden" name="notify_url" value="" />
+                <input type="hidden" name="return" value="https://www.worldartsfoundation.org/donate" />
+                <input type="hidden" name="cancel_return" value="https://www.worldartsfoundation.org/donate" />
+                <input type="hidden" name="amount" value="" />                            
+                <input type="submit" value="Donate now" className={cmptClasses} />
+            </form>
         }
 
         {onClickFn &&
