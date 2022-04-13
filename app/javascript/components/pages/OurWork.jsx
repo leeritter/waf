@@ -138,7 +138,7 @@ const OurWork = () => {
     return (
         <div className="page-wrapper">
             <Nav />
-            <Banner themeLight={false} alignLeft={true} headline="Our Work" className="--has-graphic" />            
+            <Banner themeLight={false} alignLeft={true} headline="Our Work" className="--has-graphic --is-our-work" />            
             <WorkBlock 
                 blockNumber="01" 
                 heading="Keep Alive The Dream"

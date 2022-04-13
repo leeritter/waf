@@ -119,7 +119,7 @@ const Donate = () => {
     return (
         <div className="page-wrapper">
             <Nav />
-            <Banner themeLight alignLeft={true} headline="Donate" hasDonateCta />
+            <Banner alignLeft={true} headline="Donate" hasDonateCta className="--has-graphic --is-donate" />
             <DonateBlock />
             <Sponsors logos={logos} />
             <Footer />

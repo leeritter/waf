@@ -76,7 +76,7 @@ const Leadership = () => {
     return (
         <div className="page-wrapper --is-leadership">
             <Nav />
-            <Banner themeLight={false} alignLeft={true} headline="Leadership" className="--has-graphic" />            
+            <Banner themeLight={false} alignLeft={true} headline="Leadership" className="--has-graphic --is-leadership" />            
             <GalleryStaff slides={slides} headline="Our Board" />
             <GalleryStaff slides={staffSlides} headline="Our Staff" />
             <TextBlock className="team-text" themeLight={true} heading="Executive Team" leftText={executiveText} singleCol />

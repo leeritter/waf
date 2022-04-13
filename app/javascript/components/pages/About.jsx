@@ -80,7 +80,7 @@ const About = () => {
     return (
         <div className="page-wrapper">
             <Nav />
-            <Banner themeLight={false} alignLeft={true} headline="About the foundation" className="--has-graphic" />
+            <Banner themeLight={false} alignLeft={true} headline="About the foundation" className="--has-graphic --is-about" />
             <TextBlock themeLight={true} heading="Our Mission" leftText={leftText} rightText={rightText} vPadding="lg" />
             <Gallery slides={slides} />
             <TextBlock themeLight={true} heading="Our History" leftText={leftTextHistory} rightText={rightTextHistory} vPadding="lg" />
