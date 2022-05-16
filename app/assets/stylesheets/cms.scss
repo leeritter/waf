@@ -255,6 +255,11 @@ $table-max-width: 1600px;
     font-size: 14px;
     margin-top: 5px;
   }
+
+  .download-link {
+    color: $black-5;
+    text-decoration: underline;
+  }
 }
 
 .admin-form-image {

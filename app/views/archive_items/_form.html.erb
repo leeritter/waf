@@ -26,7 +26,7 @@
     <div class="form-set">
       <%= form.label :medium, "Medium" %>
       <div class="form-select-wrapper" >
-        <%= form.select :medium, [["Photo", "photo"], ["Film", "film"], ["Audio", "audio"]] %>
+        <%= form.select :medium, [["Photo", "photo"], ["Film", "film"], ["Audio", "audio"], ["PDF", "pdf"]] %>
       </div>
     </div>
     <div class="form-set">
@@ -77,8 +77,12 @@
     <% if @archive_item.content_file.attached? %>
       <div class="form-set">        
         <label>Content Preview</label>                        
-          <% if @archive_item.medium == "photo" %>    
+          <% if @archive_item.medium == "photo" %>
+            <% if @archive_item.content_file.content_type == "image/jpeg" || @archive_item.content_file.content_type == "image/png" %>
               <%= image_tag @archive_item.content_file.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>            
+            <% else %>
+              <%= link_to 'View file', @archive_item.content_file, target: "_blank", class: "download-link" %>
+            <% end %>
           <% else %>
               <div class="admin-form-filename">File: <%= @archive_item.content_file.filename %></div>
           <% end %>
@@ -100,8 +104,12 @@
   <div class="form-row">
     <% if @archive_item.medium_photo.attached? %>
       <div class="form-set">        
-        <label>Medium Photo Preview</label>                                    
-        <%= image_tag @archive_item.medium_photo.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>        
+        <label>Medium Photo Preview</label>    
+        <% if @archive_item.medium_photo.content_type == "image/jpeg" || @archive_item.medium_photo.content_type == "image/png" %>                                
+          <%= image_tag @archive_item.medium_photo.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>        
+        <% else %>
+            <%= link_to 'View file', @archive_item.medium_photo, target: "_blank", class: "download-link" %>
+        <% end %>
       </div>
     <% end %>
     <div class="form-set">
