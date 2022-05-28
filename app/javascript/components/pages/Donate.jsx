@@ -15,17 +15,16 @@ import sponsorLogo07 from '../../../assets/images/sponsors/logo-07.png';
 import sponsorLogo08 from '../../../assets/images/sponsors/logo-08.png';
 import sponsorLogo09 from '../../../assets/images/sponsors/logo-09.png';
 import sponsorLogo10 from '../../../assets/images/sponsors/logo-10.png';
-import sponsorLogo11 from '../../../assets/images/sponsors/logo-11.png';
 import sponsorLogo12 from '../../../assets/images/sponsors/logo-12.png';
 import sponsorLogo13 from '../../../assets/images/sponsors/logo-13.png';
-import sponsorLogo14 from '../../../assets/images/sponsors/logo-14.png';
 import sponsorLogo15 from '../../../assets/images/sponsors/logo-15.png';
 import sponsorLogo16 from '../../../assets/images/sponsors/logo-16.png';
 import sponsorLogo17 from '../../../assets/images/sponsors/logo-17.png';
-import sponsorLogo18 from '../../../assets/images/sponsors/logo-18.png';
 import sponsorLogo19 from '../../../assets/images/sponsors/logo-19.png';
 import sponsorLogo20 from '../../../assets/images/sponsors/logo-20.png';
 import sponsorLogo21 from '../../../assets/images/sponsors/logo-21.png';
+import sponsorLogo22 from '../../../assets/images/sponsors/logo-22.png';
+import sponsorLogo23 from '../../../assets/images/sponsors/logo-23.png';
 
 const Donate = () => {
 
@@ -43,8 +42,12 @@ const Donate = () => {
             url: sponsorLogo17
         },
         {
-            name: "Hollywood Theatre",
-            url: sponsorLogo18
+            name: "Black United Fund of Oregon",
+            url: sponsorLogo23
+        },
+        {
+            name: "Marie Lamfrom Charitable Foundation",
+            url: sponsorLogo22
         },
         {
             name: "Enterprise",
@@ -93,11 +96,7 @@ const Donate = () => {
         {
             name: "State Farm",
             url: sponsorLogo10
-        },
-        {
-            name: "Holocene",
-            url: sponsorLogo11
-        },
+        },        
         {
             name: "XRAY FM",
             url: sponsorLogo12
@@ -105,11 +104,7 @@ const Donate = () => {
         {
             name: "Fortress",
             url: sponsorLogo13
-        },
-        {
-            name: "Moda Health",
-            url: sponsorLogo14
-        },
+        },        
         {
             name: "KBMS",
             url: sponsorLogo15

@@ -49,7 +49,7 @@ const OurWork = () => {
     const block_14_text = `<p>This 1978 oral history program featured theatrical performances drawing from the work of Dr. Martin Luther King, Jr. The program raised funds for scholarships sending African-American students to Catlin Gabel School. The program was produced by WAFI and broadcast on KGW-TV.</p>`;
     const block_15_text = `<p>This 1977 oral history program featured theatrical performances drawing from the work of W.E.B. DuBois, founder of the NAACP.</p>`;
 
-    const video_url_1 = "https://world-arts-prod.s3.amazonaws.com/website/keep-alive-the-dream.mp4";
+    const video_url_1 = "https://world-arts-prod.s3.amazonaws.com/website/keep-alive-the-dream-full.mp4";
     const video_url_2 = "https://world-arts-prod.s3.amazonaws.com/website/sherman.mp4";
     const video_url_3 = "https://world-arts-prod.s3.amazonaws.com/website/sherman-documentary.mp4";
     const video_url_4 = "https://world-arts-prod.s3.amazonaws.com/website/railroad.mp4";

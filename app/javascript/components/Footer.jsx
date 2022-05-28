@@ -12,7 +12,15 @@ const Footer = (props) => {
         <div className="cmpt-footer">
             <div className="global-container">
                 <div className="cmpt-footer__left">
-                    <span className="cmpt-footer__byline">World Arts Foundation Inc.</span>
+                    <div className="cmpt-footer__byline">
+                        World Arts Foundation Inc.
+                        <div className="cmpt-footer__contact">                            
+                            <a href="mailto:wafpdx@gmail.com">wafpdx@gmail.com</a>
+                        </div>
+                        <div className="cmpt-footer__contact">
+                            PO Box 12384 Portland,<br/>OR 97212-0384
+                        </div>
+                    </div>
                     <div className="cmpt-footer__social">
                         <a href="https://www.facebook.com/wafpdx" target="_blank" rel="noopener noreferrer"><img src={icon_fb} /></a>
                         <a href="https://www.instagram.com/wafpdx/" target="_blank" rel="noopener noreferrer"><img src={icon_insta} /></a>                        
