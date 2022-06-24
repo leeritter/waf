@@ -31,11 +31,11 @@
     </div>
     <div class="form-set">
       <%= form.label :credit, "Credit" %>
-      <%= form.text_field :credit, "data-lpignore": true %>    
+      <%= form.text_field :credit, "data-lpignore": true %>
     </div>
   </div>
-  
-  <div class="form-row">        
+
+  <div class="form-row">
     <div class="form-set">
       <%= form.label :year, "Year" %>
       <%= form.text_field :year, "data-lpignore": true %>
@@ -45,25 +45,32 @@
     </div>
   </div>
 
-  <div class="form-row">        
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :comm_group_list, "Community Group" %>
+      <%= form.hidden_field :comm_group_list, :value => @archive_item.comm_group_list.join(', '), class: "js-tag-input tag-input", "data-tag-options": @comm_group_options.join(', ') %>
+    </div>
+  </div>
+
+  <div class="form-row">
     <div class="form-set">
       <%= form.label :person_list, "People" %>
       <%= form.hidden_field :person_list, :value => @archive_item.person_list.join(', '), class: "js-tag-input tag-input", "data-tag-options": @person_options.join(', ') %>
-    </div>    
+    </div>
   </div>
 
   <div class="form-row">
     <div class="form-set">
       <%= form.label :location_list, "Location" %>
       <%= form.hidden_field :location_list, :value => @archive_item.location_list.join(', '), class: "js-tag-input tag-input", "data-tag-options": @location_options.join(', ') %>
-    </div>    
+    </div>
   </div>
 
-  <div class="form-row">        
+  <div class="form-row">
     <div class="form-set">
       <%= form.label :person_list, "Courtesy of" %>
       <%= form.hidden_field :collection_list, :value => @archive_item.collection_list.join(', '), class: "js-tag-input tag-input", "data-tag-options": @collection_options.join(', ') %>
-    </div>    
+    </div>
   </div>
 
   <div class="form-row">
@@ -75,11 +82,11 @@
 
   <div class="form-row">
     <% if @archive_item.content_file.attached? %>
-      <div class="form-set">        
-        <label>Content Preview</label>                        
+      <div class="form-set">
+        <label>Content Preview</label>
           <% if @archive_item.medium == "photo" %>
             <% if @archive_item.content_file.content_type == "image/jpeg" || @archive_item.content_file.content_type == "image/png" %>
-              <%= image_tag @archive_item.content_file.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>            
+              <%= image_tag @archive_item.content_file.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>
             <% else %>
               <%= link_to 'View file', @archive_item.content_file, target: "_blank", class: "download-link" %>
             <% end %>
@@ -91,7 +98,7 @@
     <div class="form-set">
       <%= form.label :content_file, "Content File" %>
       <%= form.file_field :content_file, direct_upload: true %>
-    </div>    
+    </div>
   </div>
 
   <div class="form-row">
@@ -103,10 +110,10 @@
 
   <div class="form-row">
     <% if @archive_item.medium_photo.attached? %>
-      <div class="form-set">        
-        <label>Medium Photo Preview</label>    
-        <% if @archive_item.medium_photo.content_type == "image/jpeg" || @archive_item.medium_photo.content_type == "image/png" %>                                
-          <%= image_tag @archive_item.medium_photo.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>        
+      <div class="form-set">
+        <label>Medium Photo Preview</label>
+        <% if @archive_item.medium_photo.content_type == "image/jpeg" || @archive_item.medium_photo.content_type == "image/png" %>
+          <%= image_tag @archive_item.medium_photo.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>
         <% else %>
             <%= link_to 'View file', @archive_item.medium_photo, target: "_blank", class: "download-link" %>
         <% end %>
@@ -115,7 +122,7 @@
     <div class="form-set">
       <%= form.label :medium_photo, "Medium Photo" %>
       <%= form.file_field :medium_photo, direct_upload: true %>
-    </div>    
+    </div>
   </div>
 
   <div class="form-row">
@@ -124,14 +131,14 @@
       <%= form.rich_text_area :medium_notes %>
     </div>
   </div>
-  
+
   <% if notice || alert %>
     <div class="err-messages">
       <div class="notice"><%= notice %></div>
       <div class="alert"><%= alert %></div>
     </div>
   <% end %>
-  
+
   <div class="form-set form-controls">
     <%= form.submit @submit_text, class: "button-round" %>
   </div>

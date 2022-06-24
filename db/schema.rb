@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_24_040452) do
+ActiveRecord::Schema.define(version: 2022_06_24_043315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2022_06_24_040452) do
     t.string "search_people"
     t.string "created_by"
     t.string "search_collections"
+    t.string "search_comm_groups"
   end
 
   create_table "archive_tags", force: :cascade do |t|
