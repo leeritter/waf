@@ -1,0 +1,32 @@
+<%= form_with model: comm_group, html: { class: "admin-form" } do |form| %>
+  <% if comm_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comm_group.errors.count, "error") %> prohibited this community group from being saved:</h2>
+
+      <ul>
+        <% comm_group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-row">
+    <div class="form-set">
+      <%= form.label :name, "Name" %>
+      <%= form.text_field :name, autocomplete: "off", "data-lpignore": true %>
+    </div>
+    <div class="form-set"></div>
+  </div>
+
+  <% if notice || alert %>
+    <div class="err-messages">
+      <div class="notice"><%= notice %></div>
+      <div class="alert"><%= alert %></div>
+    </div>
+  <% end %>
+
+  <div class="form-set form-controls">
+    <%= form.submit @submit_text, class: "button-round" %>
+  </div>
+<% end %>

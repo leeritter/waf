@@ -1,0 +1,2 @@
+class CommGroup < ApplicationRecord
+end

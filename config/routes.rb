@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comm_groups
   resources :collections
   resources :people
   devise_for :users
