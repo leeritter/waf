@@ -81,23 +81,25 @@
   </div>
 
   <div class="form-row">
-    <% if @archive_item.content_file.attached? %>
+    <% if @archive_item.content_files.attached? %>
       <div class="form-set">
         <label>Content Preview</label>
-          <% if @archive_item.medium == "photo" %>
-            <% if @archive_item.content_file.content_type == "image/jpeg" || @archive_item.content_file.content_type == "image/png" %>
-              <%= image_tag @archive_item.content_file.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>
+          <% @archive_item.content_files.each do |file| %>
+            <% if @archive_item.medium == "photo" %>
+              <% if file.content_type == "image/jpeg" || file.content_type == "image/png" %>
+                <%= image_tag file.variant(resize_to_limit: [600, nil]), class: "admin-form-image" %>
+              <% else %>
+                <%= link_to 'View file', file, target: "_blank", class: "download-link" %>
+              <% end %>
             <% else %>
-              <%= link_to 'View file', @archive_item.content_file, target: "_blank", class: "download-link" %>
+                <div class="admin-form-filename">File: <%= file.filename %></div>
             <% end %>
-          <% else %>
-              <div class="admin-form-filename">File: <%= @archive_item.content_file.filename %></div>
           <% end %>
       </div>
     <% end %>
     <div class="form-set">
-      <%= form.label :content_file, "Content File" %>
-      <%= form.file_field :content_file, direct_upload: true %>
+      <%= form.label :content_files, "Content File" %>
+      <%= form.file_field :content_files, direct_upload: true, multiple: true %>
     </div>
   </div>
 

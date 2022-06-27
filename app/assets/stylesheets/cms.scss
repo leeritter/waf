@@ -264,6 +264,10 @@ $table-max-width: 1600px;
 
 .admin-form-image {
   max-width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 .admin-form-filename {

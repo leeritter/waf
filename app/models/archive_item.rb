@@ -1,5 +1,6 @@
 class ArchiveItem < ApplicationRecord
     has_one_attached :content_file
+    has_many_attached :content_files
     has_one_attached :medium_photo
     acts_as_ordered_taggable
     acts_as_ordered_taggable_on :tags, :locations, :people, :comm_groups, :collections
