@@ -35,6 +35,12 @@ const ArchiveBeta = () => {
                 {archiveResults.map((item, index) => (
                     <div key={index}>
                         Item: {item.title}
+                        Medium: {item.medium}
+                        {item.medium === "photo" && (
+                            item.content_files.map((file) => (
+                                <img className="cmpt-archive-img" key={file.id} src={file.service_url} />
+                            ))
+                        )}
                     </div>
                 ))}
             </section>
