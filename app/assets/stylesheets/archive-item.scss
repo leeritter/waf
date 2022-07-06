@@ -3,10 +3,27 @@
   border: solid 1px red;
 }
 
+.cmpt-archive-item__button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+}
+
 .cmpt-archive-item__thumb {
   max-width: 100%;
 
   img {
     width: 100%;
   }
+}
+
+.cmpt-archive-item__meta {
+  text-align: left;
+  margin-top: 16px;
+}
+
+.cmpt-archive-item__year {
+  margin-top: 5px;
+  color: $purple-1;
 }
