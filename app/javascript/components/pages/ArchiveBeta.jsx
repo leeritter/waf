@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Banner from "../Banner";
+import ArchiveItem from "../ArchiveItem";
 
 const ArchiveBeta = () => {
     const [archiveResults, setArchiveResults] = useState([]);
@@ -33,15 +34,13 @@ const ArchiveBeta = () => {
                 <p>Count: {archiveResults.length}</p>
 
                 {archiveResults.map((item, index) => (
-                    <div key={index}>
-                        Item: {item.title}
-                        Medium: {item.medium}
-                        {item.medium === "photo" && (
-                            item.content_files.map((file) => (
-                                <img className="cmpt-archive-img" key={file.id} src={file.service_url} />
-                            ))
-                        )}
-                    </div>
+                    <ArchiveItem
+                        key={index}
+                        year={item.year}
+                        title={item.title}
+                        medium={item.medium}
+                        content_files={item.content_files}
+                    />
                 ))}
             </section>
         </div>
