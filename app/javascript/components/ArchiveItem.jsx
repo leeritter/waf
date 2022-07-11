@@ -1,9 +1,6 @@
 import React from "react";
-import classNames from 'classnames';
 
 const ArchiveItem = ({year, title, medium, content_files}) => {
-    console.log(title);
-    console.log(medium);
     return (
         <div className="cmpt-archive-item">
             <button type="button" className="cmpt-archive-item__button">
