@@ -17,14 +17,27 @@
 }
 
 .archive-filters {
-  margin: 60px 0;
-  display: flex;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: flex-start;
+  grid-column-gap: 15px;
 }
 
 .archive-filters__col {
-  width: 300px;
+  min-width: 100px;
+
+  @media (min-width: $bp-md) {
+    min-width: 300px;
+  }
 }
 
-.archive-filters__label {
-  margin-bottom: 5px;
+.archive__label {
+  margin-bottom: 8px;
+}
+
+.archive-tags {
+  margin-bottom: 60px;
+  display: grid;
 }
