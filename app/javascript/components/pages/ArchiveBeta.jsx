@@ -10,13 +10,14 @@ import Drawer from '../Drawer';
 
 const ArchiveBeta = () => {
     const [archiveResults, setArchiveResults] = useState([]);
+    const [locations, setLocations] = useState([]);
     const [filteredResults, setFilteredResults] = useState([]);
     const [filterYear, setFilterYear] = useState({value: "any", label: "Any"});
     const [filterMedium, setFilterMedium] = useState({value: "any", label: "Any"});
+    const [filterLocations, setFilterLocations] = useState([]);
     const [filters, setFilters] = useState({});
 
-    // fetch initial data
-    function fetchResults() {
+    function fetchArchiveItems() {
         const url = "/api/v1/archive_items/index";
         fetch(url)
             .then(response => {
@@ -26,15 +27,30 @@ const ArchiveBeta = () => {
                 throw new Error("Network response was not ok.");
             })
             .then(response => {
-                console.log(response);
                 setArchiveResults(response);
+            })
+            .catch(() => this.props.history.push("/"));
+    }
+
+    function fetchLocations() {
+        const url = "/api/v1/locations/index";
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error("Network response was not ok.");
+            })
+            .then(response => {
+                setLocations(response);
             })
             .catch(() => this.props.history.push("/"));
     }
 
     // get data on mount
     useEffect(() => {
-        fetchResults();
+        fetchArchiveItems();
+        fetchLocations();
     }, []);
 
     // filter results whenever filters or data changes
@@ -52,6 +68,15 @@ const ArchiveBeta = () => {
 
         if (filters.medium && filters.medium !== "any") {
             results = results.filter(item => item.medium === filters.medium);
+        }
+
+        if (filters.locations && filters.locations.length > 0) {
+            const filterLocationNames = [];
+            filters.locations.forEach(i => {
+                filterLocationNames.push(i.name);
+            })
+
+            results = results.filter(item => item.location_list.filter(i => filterLocationNames.includes(i)).length > 0);
         }
 
         setFilteredResults(results);
@@ -86,6 +111,10 @@ const ArchiveBeta = () => {
         setFilterMedium(val);
         setFilters({...filters, medium: val.value})
     }
+
+    useEffect(() => {
+        setFilters({...filters, locations: filterLocations})
+    }, [filterLocations])
 
 
     return (
@@ -123,7 +152,7 @@ const ArchiveBeta = () => {
                     </div>
 
                     <div className="archive-tags">
-                        <Drawer>Drawer shit man</Drawer>
+                        <Drawer label="Location" data={locations} handleUpdate={setFilterLocations} />
                     </div>
 
                     <ResponsiveMasonry

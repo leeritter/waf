@@ -1,0 +1,38 @@
+@import "variables";
+
+.cmpt-drawer-button {
+    background: $white-1;
+    color: $black-1;
+    border: none;
+    padding: 10px 14px 10px 30px;
+    border-radius: 33px;
+    font-size: 12px;
+    margin-right: 6px;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+        background: $white-2;
+    }
+
+    &:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url(asset-path("tag-dot.svg")) center center no-repeat;
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &.active {
+        background: $black-4;
+        color: $white-1;
+
+        &:before {
+            background: url(asset-path("close.svg")) center center no-repeat;
+        }
+
+    }
+}

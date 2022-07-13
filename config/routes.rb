@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'archive_items/index'
       get '/archive_items/:id', to: 'archive_items#show'
+      get 'locations/index'
     end
   end
 
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   resources :archive_items
   resources :archive_tags
   resources :locations
-  
+
   get 'archive_items/index'
   get 'archive_items/create'
   get 'archive_items/show'
