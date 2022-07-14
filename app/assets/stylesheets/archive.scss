@@ -41,3 +41,23 @@
   margin-bottom: 60px;
   display: grid;
 }
+
+.archive-load-more {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.archive-load-more-btn {
+  background: $white-1;
+  color: $black-1;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 33px;
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    background: $white-2;
+  }
+}

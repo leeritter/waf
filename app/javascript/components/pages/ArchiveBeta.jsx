@@ -9,6 +9,7 @@ import Nav from "../Nav";
 import Drawer from '../Drawer';
 
 const ArchiveBeta = () => {
+    const itemsPerLoad = 5;
     const [archiveResults, setArchiveResults] = useState([]);
     const [locations, setLocations] = useState([]);
     const [tags, setTags] = useState([]);
@@ -18,6 +19,7 @@ const ArchiveBeta = () => {
     const [filterLocations, setFilterLocations] = useState([]);
     const [filterTags, setFilterTags] = useState([]);
     const [filters, setFilters] = useState({});
+    const [numItemsShowing, setNumItemsShowing] = useState(itemsPerLoad);
 
     function fetchArchiveItems() {
         const url = "/api/v1/archive_items/index";
@@ -147,6 +149,10 @@ const ArchiveBeta = () => {
         setFilters({...filters, tags: filterTags})
     }, [filterTags])
 
+    function showMoreItems() {
+         setNumItemsShowing(numItemsShowing + itemsPerLoad);
+    }
+
 
     return (
         <div className="page-wrapper --is-dark">
@@ -191,7 +197,7 @@ const ArchiveBeta = () => {
                         columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
                     >
                         <Masonry gutter={20}>
-                            {filteredResults.map((item, index) => (
+                            {filteredResults.slice(0, numItemsShowing).map((item, index) => (
                             <ArchiveItem
                                 key={index}
                                 year={item.year}
@@ -202,6 +208,11 @@ const ArchiveBeta = () => {
                         ))}
                         </Masonry>
                     </ResponsiveMasonry>
+                    {numItemsShowing < filteredResults.length && (
+                        <div className="archive-load-more">
+                            <button type="button" onClick={showMoreItems} className="archive-load-more-btn">Load More</button>
+                        </div>
+                    )}
                 </div>
             </section>
             <Footer />
