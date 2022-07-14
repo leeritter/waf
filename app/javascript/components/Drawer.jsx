@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import DrawerButton from "./DrawerButton";
 
 const Drawer = ({label, data, handleUpdate}) => {
-    const defaultLimit = 3;
+    const defaultLimit = 20;
     const [limit, setLimit] = useState(defaultLimit);
     const [visibleData, setVisibleData] = useState([]);
     const [activeItems, setActiveItems] = useState([]);
@@ -41,10 +41,14 @@ const Drawer = ({label, data, handleUpdate}) => {
                 <DrawerButton label={item.name} id={item.id} key={item.id} handleClick={toggleTag} isActive={activeItems.includes(item.id)} />
             )}
 
-            {limit < data.length ? (
-                <button type="button" onClick={showAll}>Show all</button>
-            ) : (
-                <button type="button" onClick={showLess}>Show less</button>
+            {defaultLimit < data.length && (
+                <>
+                    {limit < data.length ? (
+                        <button type="button" className="cmpt-drawer-toggle" onClick={showAll}>Show all</button>
+                    ) : (
+                        <button type="button" className="cmpt-drawer-toggle" onClick={showLess}>Show less</button>
+                    )}
+                </>
             )}
         </div>
     );

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'archive_items/index'
       get '/archive_items/:id', to: 'archive_items#show'
       get 'locations/index'
+      get 'tags/index'
     end
   end
 

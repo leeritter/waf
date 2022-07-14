@@ -11,10 +11,12 @@ import Drawer from '../Drawer';
 const ArchiveBeta = () => {
     const [archiveResults, setArchiveResults] = useState([]);
     const [locations, setLocations] = useState([]);
+    const [tags, setTags] = useState([]);
     const [filteredResults, setFilteredResults] = useState([]);
     const [filterYear, setFilterYear] = useState({value: "any", label: "Any"});
     const [filterMedium, setFilterMedium] = useState({value: "any", label: "Any"});
     const [filterLocations, setFilterLocations] = useState([]);
+    const [filterTags, setFilterTags] = useState([]);
     const [filters, setFilters] = useState({});
 
     function fetchArchiveItems() {
@@ -47,10 +49,26 @@ const ArchiveBeta = () => {
             .catch(() => this.props.history.push("/"));
     }
 
+    function fetchTags() {
+        const url = "/api/v1/tags/index";
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error("Network response was not ok.");
+            })
+            .then(response => {
+                setTags(response);
+            })
+            .catch(() => this.props.history.push("/"));
+    }
+
     // get data on mount
     useEffect(() => {
         fetchArchiveItems();
         fetchLocations();
+        fetchTags();
     }, []);
 
     // filter results whenever filters or data changes
@@ -77,6 +95,15 @@ const ArchiveBeta = () => {
             })
 
             results = results.filter(item => item.location_list.filter(i => filterLocationNames.includes(i)).length > 0);
+        }
+
+        if (filters.tags && filters.tags.length > 0) {
+            const filterTagNames = [];
+            filters.tags.forEach(i => {
+                filterTagNames.push(i.name);
+            })
+
+            results = results.filter(item => item.tag_list.filter(i => filterTagNames.includes(i)).length > 0);
         }
 
         setFilteredResults(results);
@@ -116,6 +143,10 @@ const ArchiveBeta = () => {
         setFilters({...filters, locations: filterLocations})
     }, [filterLocations])
 
+    useEffect(() => {
+        setFilters({...filters, tags: filterTags})
+    }, [filterTags])
+
 
     return (
         <div className="page-wrapper --is-dark">
@@ -153,6 +184,7 @@ const ArchiveBeta = () => {
 
                     <div className="archive-tags">
                         <Drawer label="Location" data={locations} handleUpdate={setFilterLocations} />
+                        <Drawer label="Tags" data={tags} handleUpdate={setFilterTags} />
                     </div>
 
                     <ResponsiveMasonry

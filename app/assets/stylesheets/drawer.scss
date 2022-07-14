@@ -1,5 +1,19 @@
 @import "variables";
 
 .cmpt-drawer {
+    margin-bottom: 30px;
+}
 
+.cmpt-drawer-toggle {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 33px;
+    font-size: 12px;
+    background: $purple-1;
+    color: $white-1;
+    cursor: pointer;
+
+    &:hover {
+        background: $purple-4;
+    }
 }
