@@ -9,7 +9,7 @@ import Nav from "../Nav";
 import Drawer from '../Drawer';
 
 const ArchiveBeta = () => {
-    const itemsPerLoad = 5;
+    const itemsPerLoad = 20;
     const [archiveResults, setArchiveResults] = useState([]);
     const [locations, setLocations] = useState([]);
     const [tags, setTags] = useState([]);
