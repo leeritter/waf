@@ -6,7 +6,7 @@ const ArchiveItem = ({year, title, medium, content_files}) => {
             <button type="button" className="cmpt-archive-item__button">
                 {medium === "photo" && content_files[0] && (
                     <div className="cmpt-archive-item__thumb">
-                        <img src={content_files[0].service_url} />
+                        <img src={content_files[0]} />
                     </div>
                 )}
                 <div className={"cmpt-archive-item__meta"}>
