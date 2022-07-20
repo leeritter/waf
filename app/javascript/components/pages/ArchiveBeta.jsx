@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
+import Modal from 'react-modal';
 import Select from 'react-select'
 import Banner from "../Banner";
 import ArchiveItem from "../ArchiveItem";
@@ -20,6 +21,11 @@ const ArchiveBeta = () => {
     const [filterTags, setFilterTags] = useState([]);
     const [filters, setFilters] = useState({});
     const [numItemsShowing, setNumItemsShowing] = useState(itemsPerLoad);
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const [modalMedium, setModalMedium] = useState(null);
+    const [modalTitle, setModalTitle] = useState(null);
+    const [modalYear, setModalYear] = useState(null);
+    const [modalContentFiles, setModalContentFiles] = useState(null);
 
     function fetchArchiveItems() {
         const url = "/api/v1/archive_items/index";
@@ -153,6 +159,20 @@ const ArchiveBeta = () => {
          setNumItemsShowing(numItemsShowing + itemsPerLoad);
     }
 
+    function openModal(year, title, medium, content_files) {
+        setModalMedium(medium);
+        setModalTitle(title);
+        setModalYear(year);
+        setModalContentFiles(content_files);
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
+    Modal.setAppElement(document.getElementsByClassName('page-wrapper')[0]);
+
 
     return (
         <div className="page-wrapper --is-dark">
@@ -204,6 +224,7 @@ const ArchiveBeta = () => {
                                 title={item.title}
                                 medium={item.medium}
                                 content_files={item.content_files}
+                                handleClick={openModal}
                             />
                         ))}
                         </Masonry>
@@ -216,6 +237,36 @@ const ArchiveBeta = () => {
                 </div>
             </section>
             <Footer />
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                className="modal"
+                overlayClassName="overlay"
+                contentLabel="Archive Modal"
+            >
+
+                <button className="modalClose" onClick={closeModal}></button>
+                <div className="modalContent">
+                    <div className="modalArchiveItem">
+        }
+                        {modalMedium === "photo" && modalContentFiles[0] &&
+                            <img className="modalImage" src={modalContentFiles[0]} />
+                        }
+                        <div className="modalMetaInfo">
+                            {modalTitle && (
+                                <div className="modalMetaItem">
+                                    Title: {modalTitle}
+                                </div>
+                            )}
+                            {modalYear && (
+                                <div className="modalMetaItem">
+                                    Year: {modalYear}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </Modal>
         </div>
     );
 }

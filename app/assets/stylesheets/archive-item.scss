@@ -8,6 +8,7 @@
   border: 0;
   background: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .cmpt-archive-item__thumb {
@@ -26,4 +27,14 @@
 .cmpt-archive-item__year {
   margin-top: 5px;
   color: $purple-1;
+}
+
+.modalArchiveItem {
+
+}
+
+.modalMetaInfo {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fff;
 }
