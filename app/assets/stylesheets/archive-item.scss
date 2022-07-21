@@ -30,11 +30,20 @@
 }
 
 .modalArchiveItem {
-
+  display: flex;
+  align-items: center;
 }
 
 .modalMetaInfo {
   margin-top: 10px;
+  margin-left: 20px;
   font-size: 14px;
   color: #fff;
+}
+
+.modalMetaLabel {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  margin-top: 20px;
+  color: rgba(255,255,255, 0.7);
 }

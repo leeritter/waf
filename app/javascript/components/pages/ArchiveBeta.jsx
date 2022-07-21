@@ -22,10 +22,7 @@ const ArchiveBeta = () => {
     const [filters, setFilters] = useState({});
     const [numItemsShowing, setNumItemsShowing] = useState(itemsPerLoad);
     const [modalIsOpen, setIsOpen] = useState(false);
-    const [modalMedium, setModalMedium] = useState(null);
-    const [modalTitle, setModalTitle] = useState(null);
-    const [modalYear, setModalYear] = useState(null);
-    const [modalContentFiles, setModalContentFiles] = useState(null);
+    const [modalItem, setModalItem] = useState(null);
 
     function fetchArchiveItems() {
         const url = "/api/v1/archive_items/index";
@@ -37,6 +34,7 @@ const ArchiveBeta = () => {
                 throw new Error("Network response was not ok.");
             })
             .then(response => {
+                console.log(response);
                 setArchiveResults(response);
             })
             .catch(() => this.props.history.push("/"));
@@ -159,11 +157,8 @@ const ArchiveBeta = () => {
          setNumItemsShowing(numItemsShowing + itemsPerLoad);
     }
 
-    function openModal(year, title, medium, content_files) {
-        setModalMedium(medium);
-        setModalTitle(title);
-        setModalYear(year);
-        setModalContentFiles(content_files);
+    function openModal(item) {
+        setModalItem(item);
         setIsOpen(true);
     }
 
@@ -220,10 +215,7 @@ const ArchiveBeta = () => {
                             {filteredResults.slice(0, numItemsShowing).map((item, index) => (
                             <ArchiveItem
                                 key={index}
-                                year={item.year}
-                                title={item.title}
-                                medium={item.medium}
-                                content_files={item.content_files}
+                                item={item}
                                 handleClick={openModal}
                             />
                         ))}
@@ -248,19 +240,26 @@ const ArchiveBeta = () => {
                 <button className="modalClose" onClick={closeModal}></button>
                 <div className="modalContent">
                     <div className="modalArchiveItem">
-        }
-                        {modalMedium === "photo" && modalContentFiles[0] &&
-                            <img className="modalImage" src={modalContentFiles[0]} />
+                        {modalItem?.medium === "photo" && modalItem?.content_files[0] &&
+                            <img className="modalImage" src={modalItem?.content_files[0]} />
                         }
                         <div className="modalMetaInfo">
-                            {modalTitle && (
+                            {modalItem?.title && (
                                 <div className="modalMetaItem">
-                                    Title: {modalTitle}
+                                    <div className="modalMetaLabel">TITLE:</div>
+                                    {modalItem?.title}
                                 </div>
                             )}
-                            {modalYear && (
+                            {modalItem?.year && (
                                 <div className="modalMetaItem">
-                                    Year: {modalYear}
+                                    <div className="modalMetaLabel">YEAR:</div>
+                                    {modalItem?.year}
+                                </div>
+                            )}
+                            {modalItem?.description && (
+                                <div className="modalMetaItem">
+                                    <div className="modalMetaLabel">DESCRIPTION:</div>
+                                    {modalItem?.description}
                                 </div>
                             )}
                         </div>
